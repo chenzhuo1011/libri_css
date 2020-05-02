@@ -1,0 +1,18 @@
+<SYSTEM title="seg_13" ref_fname="./tmpcy5vb6if/test.stm" hyp_fname="./tmpcy5vb6if/test.ctm" creation_date="Fri May  1 13:13:29 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="10" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S13,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG13" channel="0" sequence="0" R_T1="0.000" R_T2="3.770" word_aux="h_t1+t2,h_conf">
+C,"several","several",0.030+0.430,0.000000:C,"hundred","hundred",0.430+0.760,0.000000:D,"free",,,:S,"state","enlisted",0.760+1.370,0.000000:C,"men","men",1.370+1.650,0.000000:D,"promptly",,,:D,"responded",,,:C,"to","to",2.810+2.950,0.000000:D,"the",,,:D,"summons",,,
+</PATH>
+<PATH id="(A-001)" word_cnt="21" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S13,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG13" channel="0" sequence="1" R_T1="8.250" R_T2="14.830" word_aux="h_t1+t2,h_conf">
+S,"its","it's",8.250+8.460,0.000000:C,"jaw","jaw",8.460+8.880,0.000000:C,"is","is",8.880+9.020,0.000000:C,"enormous","enormous",9.020+9.700,0.000000:C,"and","and",9.830+9.950,0.000000:C,"according","according",9.950+10.310,0.000000:C,"to","to",10.310+10.370,0.000000:C,"naturalists","naturalists",10.370+11.160,0.000000:D,"it",,,:C,"is","is",11.270+11.510,0.000000:C,"armed","armed",11.510+11.900,0.000000:C,"with","with",11.900+12.000,0.000000:C,"no","no",12.000+12.180,0.000000:C,"less","less",12.180+12.530,0.000000:C,"than","than",12.530+12.670,0.000000:C,"one","one",12.670+12.960,0.000000:C,"hundred","hundred",12.960+13.350,0.000000:D,"and",,,:C,"eighty","eighty",13.380+13.900,0.000000:C,"two","two",13.900+14.230,0.000000:C,"teeth","teeth",14.230+14.750,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="17" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S13,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG13" channel="0" sequence="2" R_T1="14.830" R_T2="20.060" word_aux="h_t1+t2,h_conf">
+C,"i","i",14.830+15.000,0.000000:C,"take","take",15.000+15.280,0.000000:C,"this","this",15.280+15.450,0.000000:S,"as","is",15.450+15.560,0.000000:C,"my","my",15.560+15.720,0.000000:C,"answer","answer",15.720+16.240,0.000000:C,"and","and",16.430+16.560,0.000000:C,"i","i",16.560+16.630,0.000000:C,"leave","leave",16.630+16.860,0.000000:C,"the","the",16.860+16.930,0.000000:C,"professor","professor",16.930+17.560,0.000000:C,"to","to",17.730+17.830,0.000000:C,"bite","bite",17.830+18.140,0.000000:C,"his","his",18.140+18.490,0.000000:C,"lips","lips",18.490+18.880,0.000000:C,"with","with",18.910+19.050,0.000000:C,"impatience","impatience",19.050+20.000,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="21" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S13,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG13" channel="0" sequence="3" R_T1="0.700" R_T2="7.380" word_aux="h_t1+t2,h_conf">
+D,"but",,,:D,"emil",,,:D,"if",,,:C,"i","i",1.690+2.010,0.000000:C,"understand","understand",2.010+2.810,0.000000:D,"then",,,:S,"all","let",2.950+3.210,0.000000:C,"our","our",3.210+3.610,0.000000:C,"good","good",3.610+3.830,0.000000:C,"times","times",3.830+4.170,0.000000:C,"are","are",4.170+4.250,0.000000:C,"over","over",4.250+4.730,0.000000:C,"we","we",4.860+4.990,0.000000:C,"can","can",4.990+5.140,0.000000:C,"never","never",5.140+5.360,0.000000:C,"do","do",5.360+5.490,0.000000:C,"nice","nice",5.490+5.830,0.000000:C,"things","things",5.830+6.130,0.000000:C,"together","together",6.130+6.560,0.000000:C,"any","any",6.560+6.790,0.000000:C,"more","more",6.790+7.360,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

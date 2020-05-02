@@ -1,0 +1,63 @@
+<SYSTEM title="seg_6" ref_fname="./tmpi0er6t68/test.stm" hyp_fname="./tmpi0er6t68/test.ctm" creation_date="Fri May  1 13:12:37 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="20" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="0" R_T1="0.000" R_T2="7.290" word_aux="h_t1+t2,h_conf">
+S,"rodolfo","rudolf",0.030+0.500,0.000000:C,"arrived","arrived",0.500+1.050,0.000000:C,"at","at",1.050+1.150,0.000000:C,"his","his",1.150+1.330,0.000000:C,"own","own",1.330+1.550,0.000000:C,"house","house",1.550+2.120,0.000000:C,"with","with",2.120+2.265,0.000000:C,"out","out",2.265+2.410,0.000000:C,"any","any",2.410+2.620,0.000000:C,"impediment","impediment",2.620+3.330,0.000000:I,,"on",3.780+3.930,0.000000:S,"and","the",3.930+3.990,0.000000:S,"leocadia's","acadians",3.990+4.540,0.000000:C,"parents","parents",4.540+5.090,0.000000:C,"reached","reached",5.090+5.420,0.000000:D,"theirs",,,:S,"heart","there's",5.420+5.800,0.000000:S,"broken","heartbroken",5.800+6.510,0.000000:C,"and","and",6.510+6.640,0.000000:C,"despairing","despairing",6.640+7.220,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="9" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="1" R_T1="7.420" R_T2="10.640" word_aux="h_t1+t2,h_conf">
+C,"now","now",7.420+7.690,0.000000:S,"you'll","will",7.690+7.820,0.000000:S,"stay","say",7.820+8.350,0.000000:C,"cried","cried",8.380+8.740,0.000000:S,"van","man",8.740+9.170,0.000000:S,"say","saying",9.220+9.600,0.000000:C,"polly","polly",9.600+9.980,0.000000:S,"won't","who",9.980+10.240,0.000000:S,"you","knew",10.240+10.790,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="24" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="2" R_T1="10.820" R_T2="18.870" word_aux="h_t1+t2,h_conf">
+C,"when","when",10.820+10.960,0.000000:C,"she","she",10.960+11.140,0.000000:C,"perceived","perceived",11.140+11.790,0.000000:C,"the","the",11.790+11.860,0.000000:C,"young","young",11.860+12.150,0.000000:C,"man","man",12.150+12.720,0.000000:C,"she","she",12.760+13.020,0.000000:C,"rose","rose",13.020+13.720,0.000000:C,"like","like",13.750+13.940,0.000000:C,"a","a",13.940+14.040,0.000000:C,"woman","woman",14.040+14.320,0.000000:C,"surprised","surprised",14.320+15.010,0.000000:C,"in","in",15.010+15.090,0.000000:C,"the","the",15.090+15.160,0.000000:C,"midst","midst",15.160+15.430,0.000000:C,"of","of",15.430+15.530,0.000000:C,"ideas","ideas",15.530+16.120,0.000000:C,"she","she",16.120+16.300,0.000000:C,"was","was",16.300+16.510,0.000000:C,"desirous","desirous",16.510+17.230,0.000000:C,"of","of",17.230+17.340,0.000000:C,"concealing","concealing",17.340+17.940,0.000000:C,"from","from",17.940+18.160,0.000000:C,"herself","herself",18.160+18.740,0.000000
+</PATH>
+<PATH id="(A-003)" word_cnt="14" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="3" R_T1="19.000" R_T2="24.210" word_aux="h_t1+t2,h_conf">
+C,"meanwhile","meanwhile",19.000+19.730,0.000000:C,"rodolfo","rodolfo",19.760+20.280,0.000000:C,"had","had",20.280+20.510,0.000000:I,,"located",20.510+21.000,0.000000:S,"leocadia","a",21.000+21.080,0.000000:C,"safe","safe",21.080+21.480,0.000000:C,"in","in",21.480+21.540,0.000000:C,"his","his",21.540+21.700,0.000000:C,"custody","custody",21.700+22.290,0.000000:C,"and","and",22.820+22.980,0.000000:C,"in","in",22.980+23.080,0.000000:C,"his","his",23.080+23.230,0.000000:C,"own","own",23.230+23.460,0.000000:S,"apartment","heart",23.460+24.140,0.000000
+</PATH>
+<PATH id="(A-004)" word_cnt="8" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="4" R_T1="24.330" R_T2="28.770" word_aux="h_t1+t2,h_conf">
+D,"but",,,:D,"john",,,:D,"there's",,,:D,"no",,,:D,"society",,,:D,"just",,,:S,"elementary","love's",25.680+26.040,0.000000:S,"work","sold",26.040+26.860,0.000000
+</PATH>
+<PATH id="(A-005)" word_cnt="8" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="5" R_T1="28.910" R_T2="31.450" word_aux="h_t1+t2,h_conf">
+C,"its","its",28.890+29.080,0.000000:C,"curtains","curtains",29.080+29.580,0.000000:C,"were","were",29.580+29.710,0.000000:C,"of","of",29.710+29.850,0.000000:C,"thick","thick",29.850+30.170,0.000000:C,"and","and",30.170+30.330,0.000000:C,"faded","faded",30.330+30.660,0.000000:C,"tapestry","tapestry",30.660+31.430,0.000000
+</PATH>
+<PATH id="(A-006)" word_cnt="38" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="6" R_T1="31.570" R_T2="43.300" word_aux="h_t1+t2,h_conf">
+C,"i","i",31.540+31.670,0.000000:C,"have","have",31.670+31.820,0.000000:C,"great","great",31.820+32.040,0.000000:C,"things","things",32.040+32.380,0.000000:C,"to","to",32.380+32.500,0.000000:C,"tell","tell",32.500+32.740,0.000000:C,"you","you",32.740+32.860,0.000000:S,"senor","sing",32.860+33.310,0.000000:C,"said","said",33.690+33.910,0.000000:I,,"thou",33.910+34.070,0.000000:I,,"hast",34.070+34.330,0.000000:S,"dona","a",34.330+34.390,0.000000:S,"estafania","mind",34.390+34.750,0.000000:C,"to","to",34.850+35.050,0.000000:D,"her",,,:S,"husband","ask",35.050+35.670,0.000000:C,"the","the",36.110+36.190,0.000000:C,"cream","cream",36.190+36.570,0.000000:C,"and","and",36.570+36.710,0.000000:C,"substance","substance",36.710+37.390,0.000000:C,"of","of",37.520+37.730,0.000000:D,"which",,,:D,"is",,,:S,"this","righteousness",37.730+38.530,0.000000:C,"the","the",38.750+38.850,0.000000:C,"fainting","fainting",38.850+39.270,0.000000:C,"girl","girl",39.270+39.520,0.000000:C,"before","before",39.520+39.980,0.000000:C,"you","you",39.980+40.310,0.000000:S,"is","as",40.460+40.630,0.000000:C,"your","your",40.630+40.780,0.000000:C,"daughter","daughter",40.780+41.200,0.000000:C,"and","and",41.700+41.840,0.000000:S,"that","the",41.840+41.900,0.000000:C,"boy","boy",41.900+42.300,0.000000:C,"is","is",42.300+42.440,0.000000:C,"your","your",42.440+42.580,0.000000:C,"grandson","grandson",42.580+43.250,0.000000
+</PATH>
+<PATH id="(A-007)" word_cnt="7" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="7" R_T1="43.430" R_T2="45.610" word_aux="h_t1+t2,h_conf">
+C,"miss","miss",43.410+43.700,0.000000:S,"lake","late",43.700+44.020,0.000000:C,"declined","declined",44.020+44.570,0.000000:C,"the","the",44.570+44.640,0.000000:C,"carriage","carriage",44.640+45.130,0.000000:C,"to","to",45.130+45.240,0.000000:C,"night","night",45.240+45.610,0.000000
+</PATH>
+<PATH id="(A-008)" word_cnt="19" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="8" R_T1="45.730" R_T2="51.250" word_aux="h_t1+t2,h_conf">
+C,"i","i",45.730+45.870,0.000000:C,"wish","wish",45.870+46.110,0.000000:C,"you","you",46.110+46.250,0.000000:I,,"were",46.250+46.375,0.000000:S,"weren't","not",46.375+46.500,0.000000:C,"so","so",46.500+46.720,0.000000:C,"restless","restless",46.720+47.450,0.000000:I,,"i",47.560+47.670,0.000000:S,"and","did",47.670+47.800,0.000000:S,"didn't","not",47.800+47.930,0.000000:C,"get","get",47.930+48.110,0.000000:C,"so","so",48.110+48.360,0.000000:C,"worked","worked",48.360+48.750,0.000000:C,"up","up",48.750+48.930,0.000000:C,"over","over",48.930+49.220,0.000000:C,"things","things",49.220+49.780,0.000000:C,"she","she",50.220+50.410,0.000000:C,"said","said",50.410+50.710,0.000000:C,"sadly","sadly",50.710+51.250,0.000000
+</PATH>
+<PATH id="(A-009)" word_cnt="18" labels="<O,O0.0_S0.1_0.5_S8_A0.0_S6,N>" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="9" R_T1="51.370" R_T2="57.710" word_aux="h_t1+t2,h_conf">
+C,"on","on",51.360+51.790,0.000000:D,"she",,,:S,"hurried","her",51.790+52.280,0.000000:C,"until","until",52.310+52.680,0.000000:D,"sweeping",,,:D,"down",,,:D,"to",,,:D,"the",,,:S,"lagoon","some",52.680+53.070,0.000000:S,"and","mourns",53.070+53.530,0.000000:S,"the","an",53.530+54.410,0.000000:S,"island","arm",54.820+55.420,0.000000:S,"lo","along",55.590+56.230,0.000000:C,"the","the",56.270+57.100,0.000000:D,"cotton",,,:D,"lay",,,:D,"before",,,:S,"her","board",57.130+57.640,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="11" R_T1="7.290" R_T2="7.420" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-001)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="12" R_T1="10.640" R_T2="10.820" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-002)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="13" R_T1="18.870" R_T2="19.000" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-003)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="14" R_T1="24.210" R_T2="24.330" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-004)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="15" R_T1="28.770" R_T2="28.910" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-005)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="16" R_T1="31.450" R_T2="31.570" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-006)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="17" R_T1="43.300" R_T2="43.430" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-007)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="18" R_T1="45.610" R_T2="45.730" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-008)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL0.1_0.5_SESS8_ACTUAL0.0_SEG6" channel="0" sequence="19" R_T1="51.250" R_T2="51.370" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

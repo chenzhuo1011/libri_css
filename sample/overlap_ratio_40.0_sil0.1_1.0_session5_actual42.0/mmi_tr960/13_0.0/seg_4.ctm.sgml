@@ -1,0 +1,23 @@
+<SYSTEM title="seg_4" ref_fname="./tmpalljlyxp/test.stm" hyp_fname="./tmpalljlyxp/test.ctm" creation_date="Fri May  1 13:16:59 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="10" labels="<O,O40.0_S0.1_1.0_S5_A42.0_S4,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS5_ACTUAL42.0_SEG4" channel="0" sequence="0" R_T1="0.000" R_T2="3.400" word_aux="h_t1+t2,h_conf">
+D,"asked",,,:S,"phronsie","on",0.420+0.690,0.000000:C,"with","with",0.690+1.120,0.000000:S,"her","your",1.120+1.230,0.000000:C,"little","little",1.230+1.450,0.000000:D,"face",,,:D,"close",,,:D,"to",,,:D,"polly's",,,:D,"own",,,
+</PATH>
+<PATH id="(A-001)" word_cnt="8" labels="<O,O40.0_S0.1_1.0_S5_A42.0_S4,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS5_ACTUAL42.0_SEG4" channel="0" sequence="1" R_T1="7.430" R_T2="10.870" word_aux="h_t1+t2,h_conf">
+C,"a","a",7.410+7.500,0.000000:C,"cold","cold",7.500+8.100,0.000000:C,"lucid","lucid",8.100+8.750,0.000000:D,"indifference",,,:S,"reigned","indifferent",8.750+9.370,0.000000:C,"in","in",9.370+9.640,0.000000:D,"his",,,:D,"soul",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="18" labels="<O,O40.0_S0.1_1.0_S5_A42.0_S4,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS5_ACTUAL42.0_SEG4" channel="0" sequence="2" R_T1="1.460" R_T2="7.370" word_aux="h_t1+t2,h_conf">
+C,"many","many",1.450+1.690,0.000000:C,"laws","laws",1.690+2.040,0.000000:S,"exist","on",2.040+2.190,0.000000:S,"among","system",2.190+2.610,0.000000:S,"us","morals",2.610+3.330,0.000000:C,"which","which",3.440+3.640,0.000000:C,"are","are",3.640+3.730,0.000000:C,"the","the",3.730+3.810,0.000000:C,"counterpart","counterpart",3.810+4.630,0.000000:C,"of","of",4.630+4.750,0.000000:C,"yours","yours",4.750+5.340,0.000000:C,"as","as",5.370+5.630,0.000000:S,"they","the",5.630+5.770,0.000000:S,"were","word",5.770+6.180,0.000000:C,"in","in",6.180+6.270,0.000000:C,"the","the",6.270+6.400,0.000000:C,"olden","olden",6.400+6.810,0.000000:C,"time","time",6.810+7.360,0.000000
+</PATH>
+<PATH id="(B-001)" word_cnt="7" labels="<O,O40.0_S0.1_1.0_S5_A42.0_S4,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS5_ACTUAL42.0_SEG4" channel="0" sequence="3" R_T1="9.150" R_T2="11.610" word_aux="h_t1+t2,h_conf">
+D,"he",,,:D,"moved",,,:D,"uneasily",,,:D,"and",,,:D,"his",,,:D,"chair",,,:D,"creaked",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="C">
+<PATH id="(C-000)" word_cnt="48" labels="<O,O40.0_S0.1_1.0_S5_A42.0_S4,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS5_ACTUAL42.0_SEG4" channel="0" sequence="4" R_T1="9.150" R_T2="28.220" word_aux="h_t1+t2,h_conf">
+D,"and",,,:D,"therefore",,,:D,"to",,,:S,"you","johnny's",9.640+10.450,0.000000:S,"i","lies",10.450+10.730,0.000000:S,"turn","jerk",10.730+11.180,0.000000:S,"timaeus","regis",11.180+11.840,0.000000:C,"citizen","citizen",11.980+12.430,0.000000:C,"of","of",12.430+12.580,0.000000:S,"locris","walkers",12.580+13.320,0.000000:C,"who","who",13.610+13.740,0.000000:C,"are","are",13.740+13.980,0.000000:C,"at","at",13.980+14.140,0.000000:C,"once","once",14.140+14.480,0.000000:C,"a","a",14.480+14.580,0.000000:C,"philosopher","philosopher",14.580+15.280,0.000000:C,"and","and",15.280+15.390,0.000000:C,"a","a",15.390+15.440,0.000000:C,"statesman","statesman",15.440+16.190,0.000000:C,"and","and",16.620+16.770,0.000000:C,"to","to",16.770+16.860,0.000000:C,"you","you",16.860+17.190,0.000000:C,"critias","critias",17.190+18.020,0.000000:C,"whom","whom",18.190+18.390,0.000000:C,"all","all",18.390+18.710,0.000000:S,"athenians","athene's",18.710+19.320,0.000000:S,"know","known",19.320+19.640,0.000000:C,"to","to",19.640+19.760,0.000000:C,"be","be",19.760+19.900,0.000000:S,"similarly","singularly",19.900+20.630,0.000000:C,"accomplished","accomplished",20.630+21.570,0.000000:C,"and","and",21.780+21.940,0.000000:C,"to","to",21.940+22.060,0.000000:I,,"her",22.060+22.200,0.000000:S,"hermocrates","moral",22.200+22.530,0.000000:S,"who","duties",22.530+23.100,0.000000:S,"is","was",23.240+23.520,0.000000:C,"also","also",23.520+23.910,0.000000:C,"fitted","fitted",23.910+24.390,0.000000:C,"by","by",24.390+24.540,0.000000:C,"nature","nature",24.540+25.050,0.000000:C,"and","and",25.080+25.260,0.000000:C,"education","education",25.260+26.310,0.000000:C,"to","to",26.350+26.470,0.000000:C,"share","share",26.470+26.940,0.000000:C,"in","in",26.940+27.050,0.000000:C,"our","our",27.050+27.210,0.000000:C,"discourse","discourse",27.210+28.160,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

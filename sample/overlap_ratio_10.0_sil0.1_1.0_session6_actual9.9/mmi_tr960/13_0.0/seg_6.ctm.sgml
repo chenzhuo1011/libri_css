@@ -1,0 +1,24 @@
+<SYSTEM title="seg_6" ref_fname="./tmptle68u3u/test.stm" hyp_fname="./tmptle68u3u/test.ctm" creation_date="Fri May  1 13:05:44 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="8" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="0" R_T1="0.000" R_T2="2.360" word_aux="h_t1+t2,h_conf">
+C,"a","a",0.030+0.090,0.000000:C,"voice","voice",0.090+0.500,0.000000:C,"from","from",0.500+0.680,0.000000:C,"beyond","beyond",0.680+1.080,0.000000:C,"the","the",1.080+1.170,0.000000:C,"world","world",1.170+1.620,0.000000:C,"was","was",1.620+1.770,0.000000:C,"calling","calling",1.770+2.310,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="6" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="1" R_T1="7.170" R_T2="9.050" word_aux="h_t1+t2,h_conf">
+D,"will",,,:D,"the",,,:S,"hurons","<unk>",7.470+7.900,0.000000:C,"hear","hear",7.900+8.060,0.000000:C,"his","his",8.060+8.230,0.000000:C,"groans","groans",8.230+8.970,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="30" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="2" R_T1="10.170" R_T2="21.130" word_aux="h_t1+t2,h_conf">
+C,"if","if",10.220+10.380,0.000000:C,"the","the",10.380+10.470,0.000000:C,"wine","wine",10.470+10.910,0.000000:S,"change","changed",10.910+11.220,0.000000:C,"into","into",11.220+11.420,0.000000:C,"vinegar","vinegar",11.420+11.990,0.000000:C,"and","and",12.250+12.400,0.000000:C,"the","the",12.400+12.490,0.000000:C,"host","host",12.490+12.970,0.000000:S,"crumble","crumbled",12.970+13.430,0.000000:C,"into","into",13.430+13.620,0.000000:C,"corruption","corruption",13.620+14.270,0.000000:C,"after","after",14.300+14.670,0.000000:C,"they","they",14.670+14.810,0.000000:C,"have","have",14.810+14.990,0.000000:C,"been","been",14.990+15.150,0.000000:C,"consecrated","consecrated",15.150+15.960,0.000000:C,"is","is",16.280+16.490,0.000000:C,"jesus","jesus",16.490+16.960,0.000000:C,"christ","christ",16.960+17.550,0.000000:C,"still","still",17.550+17.870,0.000000:C,"present","present",17.870+18.330,0.000000:C,"under","under",18.330+18.570,0.000000:C,"their","their",18.570+18.740,0.000000:C,"species","species",18.740+19.410,0.000000:D,"as",,,:D,"god",,,:D,"and",,,:C,"as","as",19.410+19.640,0.000000:D,"man",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="20" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="3" R_T1="2.260" R_T2="7.640" word_aux="h_t1+t2,h_conf">
+C,"for","for",2.340+2.480,0.000000:C,"the","the",2.480+2.570,0.000000:C,"first","first",2.570+2.910,0.000000:C,"time","time",2.910+3.260,0.000000:C,"the","the",3.290+3.390,0.000000:S,"maid","mate",3.390+3.700,0.000000:C,"seemed","seemed",3.700+4.050,0.000000:C,"a","a",4.050+4.150,0.000000:C,"little","little",4.150+4.380,0.000000:C,"confused","confused",4.380+5.170,0.000000:C,"and","and",5.350+5.470,0.000000:C,"her","her",5.470+5.560,0.000000:C,"gaze","gaze",5.560+5.890,0.000000:C,"wandered","wandered",5.890+6.300,0.000000:C,"from","from",6.300+6.490,0.000000:C,"the","the",6.490+6.620,0.000000:C,"face","face",6.620+6.890,0.000000:C,"of","of",6.890+6.980,0.000000:C,"her","her",6.980+7.100,0.000000:C,"visitor","visitor",7.100+7.470,0.000000
+</PATH>
+<PATH id="(B-001)" word_cnt="3" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="4" R_T1="9.050" R_T2="10.370" word_aux="h_t1+t2,h_conf">
+C,"the","the",9.020+9.200,0.000000:S,"story's","stories",9.200+9.790,0.000000:C,"written","written",9.790+10.220,0.000000
+</PATH>
+<PATH id="(B-002)" word_cnt="21" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S6,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG6" channel="0" sequence="5" R_T1="19.850" R_T2="26.330" word_aux="h_t1+t2,h_conf">
+D,"she",,,:D,"a",,,:D,"tory",,,:S,"and","gauze",19.640+20.050,0.000000:S,"clergyman's","<unk>",20.050+21.360,0.000000:C,"daughter","daughter",21.360+21.710,0.000000:C,"was","was",21.710+21.920,0.000000:C,"always","always",21.920+22.250,0.000000:C,"in","in",22.250+22.330,0.000000:C,"a","a",22.330+22.370,0.000000:C,"minority","minority",22.370+23.260,0.000000:C,"of","of",23.300+23.510,0.000000:C,"one","one",23.510+23.770,0.000000:C,"in","in",23.770+23.880,0.000000:C,"our","our",23.880+24.000,0.000000:C,"house","house",24.000+24.360,0.000000:C,"of","of",24.360+24.490,0.000000:C,"violent","violent",24.490+24.910,0.000000:S,"dissent","descent",24.910+25.330,0.000000:C,"and","and",25.330+25.440,0.000000:C,"radicalism","radicalism",25.440+26.280,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

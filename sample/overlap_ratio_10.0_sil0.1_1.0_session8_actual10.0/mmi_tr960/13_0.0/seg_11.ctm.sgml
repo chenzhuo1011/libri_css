@@ -1,0 +1,18 @@
+<SYSTEM title="seg_11" ref_fname="./tmpc4vh56u0/test.stm" hyp_fname="./tmpc4vh56u0/test.ctm" creation_date="Fri May  1 13:15:56 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="18" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S11,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG11" channel="0" sequence="0" R_T1="0.000" R_T2="5.380" word_aux="h_t1+t2,h_conf">
+C,"as","as",0.030+0.290,0.000000:C,"he","he",0.290+0.430,0.000000:C,"flew","flew",0.430+0.860,0.000000:C,"his","his",0.860+1.090,0.000000:C,"down","down",1.090+1.450,0.000000:C,"reaching","reaching",1.450+1.870,0.000000:C,"clutching","clutching",1.870+2.400,0.000000:C,"talons","talons",2.400+2.940,0.000000:C,"were","were",2.940+3.050,0.000000:C,"not","not",3.050+3.310,0.000000:C,"half","half",3.340+3.650,0.000000:C,"a","a",3.650+3.690,0.000000:C,"yard","yard",3.690+4.050,0.000000:I,,"of",4.050+4.150,0.000000:S,"above","a",4.150+4.210,0.000000:S,"the","reputed",4.210+4.740,0.000000:S,"fugitive's","his",4.740+4.940,0.000000:C,"head","head",4.940+5.440,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="20" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S11,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG11" channel="0" sequence="1" R_T1="5.490" R_T2="12.360" word_aux="h_t1+t2,h_conf">
+C,"but","but",5.480+5.680,0.000000:C,"suddenly","suddenly",5.680+6.230,0.000000:C,"straight","straight",6.260+6.780,0.000000:C,"and","and",6.780+6.970,0.000000:C,"swift","swift",6.970+7.400,0.000000:C,"as","as",7.400+7.520,0.000000:C,"a","a",7.520+7.610,0.000000:S,"diving","dying",7.610+8.120,0.000000:S,"cormorant","comrade",8.120+8.650,0.000000:S,"he","who",8.960+9.080,0.000000:C,"shot","shot",9.080+9.450,0.000000:C,"down","down",9.450+9.760,0.000000:C,"into","into",9.760+9.910,0.000000:C,"the","the",9.910+10.040,0.000000:C,"torrent","torrent",10.040+10.500,0.000000:C,"and","and",10.530+10.730,0.000000:C,"disappeared","disappeared",10.730+11.300,0.000000:C,"beneath","beneath",11.300+11.640,0.000000:C,"the","the",11.640+11.740,0.000000:S,"surface","<unk>",11.740+12.000,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="11" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S11,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG11" channel="0" sequence="2" R_T1="19.130" R_T2="22.240" word_aux="h_t1+t2,h_conf">
+I,,"when",19.120+19.270,0.000000:S,"larkspur","i",19.270+19.420,0.000000:S,"bit","forbid",19.420+19.980,0.000000:C,"me","me",19.980+20.100,0.000000:C,"again","again",20.100+20.360,0.000000:C,"this","this",20.360+20.540,0.000000:C,"morning","morning",20.540+20.870,0.000000:C,"for","for",20.870+21.020,0.000000:C,"the","the",21.020+21.200,0.000000:C,"third","third",21.200+21.640,0.000000:C,"time","time",21.640+22.200,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="17" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S11,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG11" channel="0" sequence="3" R_T1="11.980" R_T2="18.810" word_aux="h_t1+t2,h_conf">
+S,"hilda","tilda",12.000+12.260,0.000000:C,"watched","watched",12.260+12.600,0.000000:C,"him","him",12.600+12.720,0.000000:C,"from","from",12.720+12.860,0.000000:S,"her","the",12.860+12.930,0.000000:C,"corner","corner",12.930+13.400,0.000000:C,"trembling","trembling",13.630+14.170,0.000000:C,"and","and",14.170+14.300,0.000000:C,"scarcely","scarcely",14.300+14.730,0.000000:C,"breathing","breathing",14.730+15.290,0.000000:C,"dark","dark",15.530+15.790,0.000000:C,"shadows","shadows",15.790+16.210,0.000000:C,"growing","growing",16.210+16.600,0.000000:C,"about","about",16.600+16.830,0.000000:C,"her","her",16.830+16.980,0.000000:C,"eyes","eyes",16.980+17.670,0.000000:S,"it","ache",18.510+19.060,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

@@ -1,0 +1,12 @@
+<SYSTEM title="seg_5" ref_fname="./tmpf4fdiv3i/test.stm" hyp_fname="./tmpf4fdiv3i/test.ctm" creation_date="Fri May  1 13:09:10 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="6" labels="<O,O40.0_S0.1_1.0_S3_A40.2_S5,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS3_ACTUAL40.2_SEG5" channel="0" sequence="0" R_T1="0.000" R_T2="1.980" word_aux="h_t1+t2,h_conf">
+C,"nothing","nothing",0.030+0.470,0.000000:D,"more",,,:D,"than",,,:D,"you",,,:D,"know",,,:D,"yourself",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="38" labels="<O,O40.0_S0.1_1.0_S3_A40.2_S5,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS3_ACTUAL40.2_SEG5" channel="0" sequence="1" R_T1="0.060" R_T2="9.720" word_aux="h_t1+t2,h_conf">
+D,"he",,,:C,"was","was",0.470+0.650,0.000000:D,"in",,,:D,"the",,,:D,"midst",,,:D,"of",,,:S,"that","a",0.650+0.760,0.000000:S,"when","natural",0.760+1.200,0.000000:S,"your","result",1.200+1.690,0.000000:S,"return","heard",1.690+2.060,0.000000:C,"caused","caused",2.060+2.370,0.000000:C,"him","him",2.370+2.490,0.000000:C,"to","to",2.490+2.600,0.000000:C,"make","make",2.600+2.780,0.000000:C,"a","a",2.780+2.850,0.000000:C,"very","very",2.850+3.250,0.000000:C,"hurried","hurried",3.250+3.580,0.000000:C,"retreat","retreat",3.580+4.180,0.000000:C,"very","very",4.590+5.090,0.000000:C,"hurried","hurried",5.090+5.580,0.000000:C,"since","since",5.820+6.100,0.000000:C,"he","he",6.100+6.200,0.000000:C,"had","had",6.200+6.410,0.000000:C,"not","not",6.410+6.620,0.000000:C,"time","time",6.620+7.000,0.000000:C,"to","to",7.000+7.110,0.000000:C,"replace","replace",7.110+7.470,0.000000:C,"the","the",7.470+7.550,0.000000:C,"papers","papers",7.550+8.020,0.000000:C,"which","which",8.020+8.220,0.000000:C,"would","would",8.220+8.340,0.000000:C,"tell","tell",8.340+8.560,0.000000:C,"you","you",8.560+8.730,0.000000:C,"that","that",8.730+8.860,0.000000:C,"he","he",8.860+9.000,0.000000:C,"had","had",9.000+9.110,0.000000:C,"been","been",9.110+9.320,0.000000:C,"there","there",9.320+9.620,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

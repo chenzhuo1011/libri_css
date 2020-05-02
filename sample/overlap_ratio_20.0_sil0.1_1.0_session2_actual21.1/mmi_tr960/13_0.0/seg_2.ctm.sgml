@@ -1,0 +1,7 @@
+<SYSTEM title="seg_2" ref_fname="./tmp6xexz35r/test.stm" hyp_fname="./tmp6xexz35r/test.ctm" creation_date="Fri May  1 13:16:45 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="17" labels="<O,O20.0_S0.1_1.0_S2_A21.1_S2,N>" file="OpenCSS_OVLP20.0_SIL0.1_1.0_SESS2_ACTUAL21.1_SEG2" channel="0" sequence="0" R_T1="0.000" R_T2="9.800" word_aux="h_t1+t2,h_conf">
+C,"it","it",0.030+0.180,0.000000:C,"is","is",0.180+0.380,0.000000:C,"black","black",0.380+1.010,0.000000:S,"in","and",1.010+1.180,0.000000:C,"misfortune","misfortune",1.180+2.440,0.000000:C,"it","it",2.620+2.790,0.000000:C,"is","is",2.790+2.960,0.000000:C,"blacker","blacker",2.960+3.430,0.000000:C,"still","still",3.430+4.080,0.000000:C,"in","in",4.080+4.240,0.000000:C,"crime","crime",4.240+5.210,0.000000:C,"these","these",5.710+6.080,0.000000:C,"two","two",6.080+6.310,0.000000:C,"blacknesses","blacknesses",6.310+7.450,0.000000:C,"amalgamated","amalgamated",7.450+8.640,0.000000:C,"compose","compose",8.640+9.160,0.000000:S,"slang","sleighing",9.160+9.770,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

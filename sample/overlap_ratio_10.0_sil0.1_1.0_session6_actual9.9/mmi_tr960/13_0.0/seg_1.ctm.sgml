@@ -1,0 +1,15 @@
+<SYSTEM title="seg_1" ref_fname="./tmpj_z5h7fq/test.stm" hyp_fname="./tmpj_z5h7fq/test.ctm" creation_date="Fri May  1 13:05:44 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="10" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S1,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG1" channel="0" sequence="0" R_T1="0.000" R_T2="4.460" word_aux="h_t1+t2,h_conf">
+S,"pride","cried",0.000+0.320,0.000000:C,"after","after",0.320+0.550,0.000000:C,"satisfaction","satisfaction",0.550+1.390,0.000000:I,,"of",1.390+1.610,0.000000:S,"uplifted","lifted",1.610+1.950,0.000000:C,"him","him",1.950+2.240,0.000000:C,"like","like",2.240+2.490,0.000000:C,"long","long",2.490+2.950,0.000000:C,"slow","slow",2.950+3.530,0.000000:S,"waves","way",3.530+4.070,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="17" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S1,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG1" channel="0" sequence="1" R_T1="6.880" R_T2="12.910" word_aux="h_t1+t2,h_conf">
+S,"if","write",6.690+6.920,0.000000:C,"a","a",7.020+7.130,0.000000:C,"layman","layman",7.130+7.540,0.000000:S,"in","and",7.710+7.850,0.000000:C,"giving","giving",7.850+8.180,0.000000:C,"baptism","baptism",8.180+8.870,0.000000:S,"pour","for",8.910+9.140,0.000000:C,"the","the",9.140+9.240,0.000000:C,"water","water",9.240+9.650,0.000000:C,"before","before",9.650+10.150,0.000000:C,"saying","saying",10.150+10.570,0.000000:C,"the","the",10.570+10.650,0.000000:C,"words","words",10.650+11.180,0.000000:C,"is","is",11.290+11.510,0.000000:C,"the","the",11.510+11.600,0.000000:C,"child","child",11.600+12.080,0.000000:C,"baptized","baptized",12.080+12.850,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="9" labels="<O,O10.0_S0.1_1.0_S6_A9.9_S1,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS6_ACTUAL9.9_SEG1" channel="0" sequence="2" R_T1="4.090" R_T2="7.330" word_aux="h_t1+t2,h_conf">
+C,"on","on",4.120+4.250,0.000000:C,"august","august",4.250+4.640,0.000000:C,"twenty","twenty",4.640+4.940,0.000000:C,"seventh","seventh",4.940+5.470,0.000000:C,"eighteen","eighteen",5.500+5.910,0.000000:C,"thirty","thirty",5.910+6.160,0.000000:C,"seven","seven",6.160+6.490,0.000000:C,"she","she",6.490+6.690,0.000000:S,"writes","of",6.920+7.020,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

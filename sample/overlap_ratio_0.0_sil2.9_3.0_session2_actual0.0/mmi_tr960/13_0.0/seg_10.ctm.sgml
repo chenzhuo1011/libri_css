@@ -1,0 +1,21 @@
+<SYSTEM title="seg_10" ref_fname="./tmpqev81zv4/test.stm" hyp_fname="./tmpqev81zv4/test.ctm" creation_date="Fri May  1 13:09:11 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="34" labels="<O,O0.0_S2.9_3.0_S2_A0.0_S10,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS2_ACTUAL0.0_SEG10" channel="0" sequence="0" R_T1="0.000" R_T2="12.210" word_aux="h_t1+t2,h_conf">
+C,"the","the",0.030+0.150,0.000000:C,"pain","pain",0.150+0.780,0.000000:C,"produced","produced",0.810+1.560,0.000000:C,"by","by",1.590+1.810,0.000000:C,"an","an",1.810+1.970,0.000000:C,"act","act",1.970+2.320,0.000000:C,"of","of",2.320+2.550,0.000000:C,"hasty","hasty",2.550+3.220,0.000000:C,"and","and",3.270+3.560,0.000000:S,"angry","am",3.560+3.820,0.000000:S,"violence","reliance",3.820+4.920,0.000000:C,"to","to",4.990+5.190,0.000000:C,"which","which",5.190+5.460,0.000000:C,"a","a",5.460+5.610,0.000000:C,"father","father",5.610+6.060,0.000000:C,"subjects","subjects",6.060+6.600,0.000000:C,"his","his",6.600+6.850,0.000000:C,"son","son",6.850+7.300,0.000000:C,"may","may",7.350+7.610,0.000000:C,"soon","soon",7.610+7.990,0.000000:C,"pass","pass",7.990+8.310,0.000000:C,"away","away",8.310+8.880,0.000000:C,"but","but",8.930+9.100,0.000000:C,"the","the",9.100+9.180,0.000000:C,"memory","memory",9.180+9.750,0.000000:C,"of","of",9.750+9.860,0.000000:C,"it","it",9.860+10.170,0.000000:C,"does","does",10.210+10.490,0.000000:C,"not","not",10.490+10.810,0.000000:C,"pass","pass",10.810+11.090,0.000000:C,"away","away",11.090+11.410,0.000000:C,"with","with",11.410+11.590,0.000000:C,"the","the",11.590+11.660,0.000000:C,"pain","pain",11.660+12.190,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="31" labels="<O,O0.0_S2.9_3.0_S2_A0.0_S10,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS2_ACTUAL0.0_SEG10" channel="0" sequence="1" R_T1="15.110" R_T2="25.680" word_aux="h_t1+t2,h_conf">
+C,"in","in",15.210+15.290,0.000000:C,"a","a",15.290+15.380,0.000000:C,"few","few",15.380+15.590,0.000000:C,"days","days",15.590+15.990,0.000000:C,"an","an",15.990+16.110,0.000000:C,"officer","officer",16.110+16.610,0.000000:C,"came","came",16.610+17.100,0.000000:C,"with","with",17.300+17.490,0.000000:C,"a","a",17.490+17.630,0.000000:C,"requisition","requisition",17.630+18.360,0.000000:C,"from","from",18.360+18.550,0.000000:C,"governor","governor",18.550+18.930,0.000000:C,"shannon","shannon",18.930+19.590,0.000000:C,"and","and",19.930+20.160,0.000000:C,"took","took",20.160+20.390,0.000000:C,"the","the",20.390+20.480,0.000000:C,"prisoner","prisoner",20.480+21.110,0.000000:C,"by","by",21.110+21.300,0.000000:C,"land","land",21.300+21.590,0.000000:I,,"the",21.590+21.680,0.000000:S,"to","west",21.680+22.010,0.000000:S,"westport","port",22.010+22.430,0.000000:C,"and","and",22.770+22.980,0.000000:C,"afterwards","afterwards",22.980+23.640,0.000000:C,"from","from",23.640+23.860,0.000000:C,"there","there",23.860+24.100,0.000000:C,"to","to",24.100+24.200,0.000000:C,"kansas","kansas",24.200+24.650,0.000000:C,"city","city",24.650+24.930,0.000000:C,"and","and",24.930+25.040,0.000000:C,"leavenworth","leavenworth",25.040+25.700,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="8" labels="<O,O0.0_S2.9_3.0_S2_A0.0_S10,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS2_ACTUAL0.0_SEG10" channel="0" sequence="2" R_T1="28.590" R_T2="32.620" word_aux="h_t1+t2,h_conf">
+C,"hose","hose",28.710+29.460,0.000000:I,,"a",29.490+30.300,0.000000:C,"man's","man's",30.360+30.810,0.000000:C,"excuse","excuse",30.810+31.380,0.000000:C,"for","for",31.380+31.530,0.000000:C,"wetting","wetting",31.530+31.980,0.000000:C,"the","the",31.980+32.060,0.000000:C,"walk","walk",32.060+32.580,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS2_ACTUAL0.0_SEG10" channel="0" sequence="4" R_T1="12.210" R_T2="15.110" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-001)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS2_ACTUAL0.0_SEG10" channel="0" sequence="5" R_T1="25.680" R_T2="28.590" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

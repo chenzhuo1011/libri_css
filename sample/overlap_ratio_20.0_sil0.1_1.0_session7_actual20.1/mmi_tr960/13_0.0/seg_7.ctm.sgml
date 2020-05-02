@@ -1,0 +1,15 @@
+<SYSTEM title="seg_7" ref_fname="./tmp2ihg_wqv/test.stm" hyp_fname="./tmp2ihg_wqv/test.ctm" creation_date="Fri May  1 13:04:44 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="9" labels="<O,O20.0_S0.1_1.0_S7_A20.1_S7,N>" file="OpenCSS_OVLP20.0_SIL0.1_1.0_SESS7_ACTUAL20.1_SEG7" channel="0" sequence="0" R_T1="0.000" R_T2="3.610" word_aux="h_t1+t2,h_conf">
+C,"there's","there's",0.030+0.320,0.000000:C,"many","many",0.320+0.800,0.000000:C,"a","a",0.800+0.940,0.000000:C,"one","one",0.940+1.240,0.000000:C,"considerably","considerably",1.240+2.150,0.000000:C,"older","older",2.150+2.650,0.000000:C,"than","than",2.650+2.810,0.000000:C,"i","i",2.810+3.090,0.000000:C,"am","am",3.090+3.370,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="17" labels="<O,O20.0_S0.1_1.0_S7_A20.1_S7,N>" file="OpenCSS_OVLP20.0_SIL0.1_1.0_SESS7_ACTUAL20.1_SEG7" channel="0" sequence="1" R_T1="5.580" R_T2="12.060" word_aux="h_t1+t2,h_conf">
+D,"what",,,:S,"then","forehead",4.720+5.600,0.000000:C,"a","a",6.470+6.600,0.000000:C,"human","human",6.600+7.140,0.000000:I,,"and",7.140+7.600,0.000000:S,"hand","a",7.600+7.710,0.000000:C,"large","large",7.710+8.270,0.000000:C,"and","and",8.270+8.440,0.000000:C,"shapely","shapely",8.440+9.090,0.000000:C,"appeared","appeared",9.090+9.540,0.000000:C,"distinctly","distinctly",9.540+10.360,0.000000:C,"on","on",10.360+10.610,0.000000:C,"the","the",10.610+10.730,0.000000:C,"surface","surface",10.730+11.230,0.000000:C,"of","of",11.230+11.380,0.000000:C,"the","the",11.380+11.460,0.000000:C,"pond","pond",11.460+12.000,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="10" labels="<O,O20.0_S0.1_1.0_S7_A20.1_S7,N>" file="OpenCSS_OVLP20.0_SIL0.1_1.0_SESS7_ACTUAL20.1_SEG7" channel="0" sequence="2" R_T1="3.090" R_T2="6.320" word_aux="h_t1+t2,h_conf">
+S,"mister","to",3.370+3.520,0.000000:S,"edison","addison",3.520+3.990,0.000000:C,"was","was",3.990+4.190,0.000000:C,"a","a",4.190+4.300,0.000000:S,"leader","meagre",4.300+4.720,0.000000:S,"far","while",5.600+6.020,0.000000:S,"ahead","that",6.020+6.390,0.000000:C,"of","of",6.390+6.470,0.000000:D,"the",,,:D,"time",,,
+</PATH>
+</SPEAKER>
+</SYSTEM>

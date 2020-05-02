@@ -1,0 +1,23 @@
+<SYSTEM title="seg_5" ref_fname="./tmp6ohsdnk8/test.stm" hyp_fname="./tmp6ohsdnk8/test.ctm" creation_date="Fri May  1 13:15:57 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="15" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S5,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG5" channel="0" sequence="0" R_T1="0.000" R_T2="6.930" word_aux="h_t1+t2,h_conf">
+C,"double","double",0.030+0.530,0.000000:C,"nine","nine",0.530+0.960,0.000000:C,"two","two",0.960+1.370,0.000000:C,"three","three",1.370+1.770,0.000000:C,"elsinore","elsinore",1.770+2.390,0.000000:C,"double","double",3.050+3.390,0.000000:S,"nine","not",3.390+3.750,0.000000:C,"yes","yes",3.750+4.200,0.000000:D,"hallo",,,:D,"is",,,:S,"that","lowther",4.740+5.260,0.000000:C,"you","you",5.260+5.520,0.000000:D,"horatio",,,:D,"hamlet",,,:D,"speaking",,,
+</PATH>
+<PATH id="(A-001)" word_cnt="12" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S5,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG5" channel="0" sequence="1" R_T1="10.980" R_T2="14.960" word_aux="h_t1+t2,h_conf">
+D,"were",,,:D,"i",,,:D,"in",,,:D,"the",,,:D,"warm",,,:D,"room",,,:D,"with",,,:D,"all",,,:D,"the",,,:D,"splendor",,,:D,"and",,,:D,"magnificence",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="10" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S5,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG5" channel="0" sequence="2" R_T1="5.960" R_T2="10.450" word_aux="h_t1+t2,h_conf">
+D,"then",,,:D,"good",,,:D,"byee",,,:D,"said",,,:D,"the",,,:D,"rats",,,:D,"and",,,:S,"they","resumed",5.520+6.010,0.000000:S,"went","have",6.010+6.500,0.000000:S,"home","facts",7.760+8.420,0.000000
+</PATH>
+<PATH id="(B-001)" word_cnt="30" labels="<O,O10.0_S0.1_1.0_S8_A10.0_S5,N>" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG5" channel="0" sequence="3" R_T1="14.300" R_T2="22.450" word_aux="h_t1+t2,h_conf">
+D,"in",,,:D,"a",,,:D,"few",,,:D,"hours",,,:D,"the",,,:D,"examination",,,:D,"would",,,:D,"commence",,,:D,"and",,,:D,"he",,,:D,"was",,,:D,"still",,,:D,"in",,,:D,"the",,,:D,"dilemma",,,:D,"between",,,:D,"making",,,:D,"the",,,:D,"facts",,,:D,"public",,,:D,"and",,,:D,"allowing",,,:D,"the",,,:D,"culprit",,,:D,"to",,,:D,"compete",,,:D,"for",,,:D,"the",,,:D,"valuable",,,:D,"scholarship",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="OpenCSS_OVLP10.0_SIL0.1_1.0_SESS8_ACTUAL10.0_SEG5" channel="0" sequence="5" R_T1="10.450" R_T2="10.980" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

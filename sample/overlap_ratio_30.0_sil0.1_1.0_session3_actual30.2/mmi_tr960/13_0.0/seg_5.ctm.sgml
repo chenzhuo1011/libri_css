@@ -1,0 +1,7 @@
+<SYSTEM title="seg_5" ref_fname="./tmpysguf7jx/test.stm" hyp_fname="./tmpysguf7jx/test.ctm" creation_date="Fri May  1 13:14:01 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="23" labels="<O,O30.0_S0.1_1.0_S3_A30.2_S5,N>" file="OpenCSS_OVLP30.0_SIL0.1_1.0_SESS3_ACTUAL30.2_SEG5" channel="0" sequence="0" R_T1="0.000" R_T2="7.640" word_aux="h_t1+t2,h_conf">
+C,"for","for",0.060+0.190,0.000000:C,"a","a",0.190+0.270,0.000000:C,"few","few",0.270+0.450,0.000000:C,"miles","miles",0.450+0.890,0.000000:C,"she","she",0.890+1.120,0.000000:C,"followed","followed",1.120+1.510,0.000000:C,"the","the",1.510+1.600,0.000000:C,"line","line",1.600+1.970,0.000000:C,"hitherto","hitherto",1.970+2.480,0.000000:C,"presumably","presumably",2.480+3.240,0.000000:C,"occupied","occupied",3.240+3.900,0.000000:C,"by","by",3.900+4.070,0.000000:C,"the","the",4.070+4.180,0.000000:C,"coast","coast",4.180+4.510,0.000000:S,"of","about",4.510+4.830,0.000000:S,"algeria","syria",4.830+5.360,0.000000:C,"but","but",5.920+6.070,0.000000:C,"no","no",6.070+6.220,0.000000:C,"land","land",6.220+6.600,0.000000:C,"appeared","appeared",6.600+6.950,0.000000:C,"to","to",6.950+7.030,0.000000:C,"the","the",7.030+7.120,0.000000:C,"south","south",7.120+7.610,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

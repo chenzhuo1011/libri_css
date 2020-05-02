@@ -1,0 +1,39 @@
+<SYSTEM title="seg_1" ref_fname="./tmpy_pzkxjt/test.stm" hyp_fname="./tmpy_pzkxjt/test.ctm" creation_date="Fri May  1 13:15:58 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="22" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="0" R_T1="0.000" R_T2="7.020" word_aux="h_t1+t2,h_conf">
+C,"i","i",0.030+0.080,0.000000:C,"will","will",0.080+0.230,0.000000:C,"briefly","briefly",0.230+0.780,0.000000:C,"describe","describe",0.780+1.400,0.000000:S,"them","him",1.400+1.540,0.000000:C,"to","to",1.540+1.670,0.000000:C,"you","you",1.670+2.200,0.000000:C,"and","and",2.440+2.570,0.000000:C,"you","you",2.570+2.640,0.000000:C,"shall","shall",2.640+2.940,0.000000:C,"read","read",2.940+3.180,0.000000:C,"the","the",3.180+3.310,0.000000:C,"account","account",3.310+3.770,0.000000:C,"of","of",3.770+3.890,0.000000:C,"them","them",3.890+4.180,0.000000:S,"at","as",4.210+4.410,0.000000:C,"your","your",4.410+4.560,0.000000:C,"leisure","leisure",4.560+5.090,0.000000:C,"in","in",5.270+5.370,0.000000:C,"the","the",5.370+5.470,0.000000:C,"sacred","sacred",5.470+5.950,0.000000:C,"registers","registers",5.950+6.950,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="9" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="1" R_T1="9.930" R_T2="13.190" word_aux="h_t1+t2,h_conf">
+I,,"milly",10.020+10.300,0.000000:S,"familiarity","heresy",10.300+10.900,0.000000:C,"is","is",10.930+11.110,0.000000:D,"a",,,:S,"feeling","filling",11.110+11.710,0.000000:C,"capable","capable",11.750+12.310,0.000000:C,"of","of",12.310+12.410,0.000000:I,,"the",12.410+12.480,0.000000:S,"degrees","grooms",12.480+13.130,0.000000
+</PATH>
+<PATH id="(A-002)" word_cnt="17" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="2" R_T1="16.090" R_T2="22.310" word_aux="h_t1+t2,h_conf">
+C,"remembering","remembering",16.140+16.640,0.000000:C,"has","has",16.640+16.950,0.000000:C,"to","to",16.950+17.040,0.000000:C,"be","be",17.040+17.160,0.000000:S,"a","at",17.160+17.290,0.000000:C,"present","present",17.290+17.760,0.000000:D,"occurrence",,,:S,"in","occurs",17.760+18.430,0.000000:S,"some","and",18.480+18.670,0.000000:S,"way","somewhat",18.670+19.130,0.000000:C,"resembling","resembling",19.130+19.770,0.000000:C,"or","or",19.800+19.930,0.000000:C,"related","related",19.930+20.390,0.000000:C,"to","to",20.390+20.980,0.000000:C,"what","what",21.100+21.370,0.000000:C,"is","is",21.370+21.570,0.000000:C,"remembered","remembered",21.570+22.180,0.000000
+</PATH>
+<PATH id="(A-003)" word_cnt="42" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="3" R_T1="25.230" R_T2="41.240" word_aux="h_t1+t2,h_conf">
+C,"whether","whether",25.260+25.580,0.000000:C,"or","or",25.580+25.620,0.000000:C,"not","not",25.620+25.870,0.000000:C,"this","this",25.870+26.040,0.000000:C,"principle","principle",26.040+26.620,0.000000:C,"is","is",26.620+26.770,0.000000:C,"liable","liable",26.770+27.170,0.000000:C,"to","to",27.170+27.330,0.000000:C,"exceptions","exceptions",27.330+28.240,0.000000:C,"every","every",28.410+28.690,0.000000:C,"one","one",28.690+28.880,0.000000:C,"would","would",28.880+29.000,0.000000:C,"agree","agree",29.000+29.340,0.000000:C,"that","that",29.340+29.610,0.000000:S,"is","it",29.700+29.790,0.000000:C,"has","has",29.790+30.000,0.000000:C,"a","a",30.000+30.070,0.000000:C,"broad","broad",30.070+30.390,0.000000:C,"measure","measure",30.390+30.710,0.000000:C,"of","of",30.710+30.820,0.000000:C,"truth","truth",30.820+31.540,0.000000:C,"though","though",31.770+31.910,0.000000:C,"the","the",31.910+32.020,0.000000:C,"word","word",32.020+32.330,0.000000:C,"exactly","exactly",32.330+33.070,0.000000:S,"might","my",33.170+33.380,0.000000:S,"seem","seamen",33.380+33.720,0.000000:S,"an","over",33.720+33.980,0.000000:S,"overstatement","steak",33.980+34.550,0.000000:C,"and","and",34.790+34.950,0.000000:C,"it","it",34.950+35.050,0.000000:C,"might","might",35.050+35.280,0.000000:C,"seem","seem",35.280+35.510,0.000000:C,"more","more",35.510+35.740,0.000000:C,"correct","correct",35.740+36.260,0.000000:C,"to","to",36.290+36.460,0.000000:C,"say","say",36.460+36.980,0.000000:C,"that","that",37.190+37.340,0.000000:C,"ideas","ideas",37.340+37.930,0.000000:S,"approximately","across",37.980+38.590,0.000000:S,"represent","up",38.590+39.010,0.000000:S,"impressions","wrappers",39.550+40.040,0.000000
+</PATH>
+<PATH id="(A-004)" word_cnt="17" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="4" R_T1="44.150" R_T2="50.410" word_aux="h_t1+t2,h_conf">
+C,"he","he",44.190+44.330,0.000000:C,"darted","darted",44.330+44.920,0.000000:C,"like","like",44.950+45.250,0.000000:C,"an","an",45.250+45.350,0.000000:C,"arrow","arrow",45.350+45.770,0.000000:C,"through","through",45.980+46.290,0.000000:C,"all","all",46.290+46.550,0.000000:C,"the","the",46.550+46.630,0.000000:C,"halls","halls",46.630+47.400,0.000000:C,"down","down",47.440+47.770,0.000000:C,"all","all",47.800+48.080,0.000000:C,"the","the",48.080+48.190,0.000000:C,"stairs","stairs",48.190+48.780,0.000000:C,"and","and",48.970+49.130,0.000000:C,"across","across",49.130+49.630,0.000000:C,"the","the",49.630+49.710,0.000000:C,"yard","yard",49.710+50.310,0.000000
+</PATH>
+<PATH id="(A-005)" word_cnt="4" labels="<O,O0.0_S2.9_3.0_S4_A0.0_S1,N>" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="5" R_T1="53.310" R_T2="55.240" word_aux="h_t1+t2,h_conf">
+C,"i","i",53.340+53.580,0.000000:C,"am","am",53.580+53.960,0.000000:C,"very","very",53.960+54.470,0.000000:C,"glad","glad",54.470+55.120,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="inter_segment_gap">
+<PATH id="(Inter_Segment_Gap-000)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="7" R_T1="7.020" R_T2="9.930" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-001)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="8" R_T1="13.190" R_T2="16.090" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-002)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="9" R_T1="22.310" R_T2="25.230" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-003)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="10" R_T1="41.240" R_T2="44.150" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+<PATH id="(Inter_Segment_Gap-004)" word_cnt="0" file="OpenCSS_OVLP0.0_SIL2.9_3.0_SESS4_ACTUAL0.0_SEG1" channel="0" sequence="11" R_T1="50.410" R_T2="53.310" word_aux="h_t1+t2,h_conf">
+
+</PATH>
+</SPEAKER>
+</SYSTEM>

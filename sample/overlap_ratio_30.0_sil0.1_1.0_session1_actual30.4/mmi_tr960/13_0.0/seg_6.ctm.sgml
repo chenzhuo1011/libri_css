@@ -1,0 +1,18 @@
+<SYSTEM title="seg_6" ref_fname="./tmp4p39olgn/test.stm" hyp_fname="./tmp4p39olgn/test.ctm" creation_date="Fri May  1 13:14:02 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="8" labels="<O,O30.0_S0.1_1.0_S1_A30.4_S6,N>" file="OpenCSS_OVLP30.0_SIL0.1_1.0_SESS1_ACTUAL30.4_SEG6" channel="0" sequence="0" R_T1="0.000" R_T2="2.110" word_aux="h_t1+t2,h_conf">
+C,"i","i",0.030+0.090,0.000000:C,"was","was",0.090+0.280,0.000000:C,"absent","absent",0.280+0.870,0.000000:C,"rather","rather",0.870+1.170,0.000000:C,"more","more",1.170+1.400,0.000000:C,"than","than",1.400+1.530,0.000000:C,"an","an",1.530+1.630,0.000000:S,"hour","ass",1.630+1.850,0.000000
+</PATH>
+<PATH id="(A-001)" word_cnt="16" labels="<O,O30.0_S0.1_1.0_S1_A30.4_S6,N>" file="OpenCSS_OVLP30.0_SIL0.1_1.0_SESS1_ACTUAL30.4_SEG6" channel="0" sequence="1" R_T1="3.200" R_T2="10.020" word_aux="h_t1+t2,h_conf">
+D,"he",,,:D,"summoned",,,:D,"half",,,:S,"a","sixteen",3.030+3.560,0.000000:C,"dozen","dozen",4.220+4.600,0.000000:C,"citizens","citizens",4.600+5.530,0.000000:C,"to","to",5.720+5.880,0.000000:C,"join","join",5.880+6.220,0.000000:C,"his","his",6.220+6.450,0.000000:C,"posse","posse",6.450+7.090,0.000000:D,"who",,,:D,"followed",,,:D,"obeyed",,,:S,"and","to",7.330+7.500,0.000000:S,"assisted","follow",7.500+8.080,0.000000:S,"him","obey",8.360+9.030,0.000000
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="3" labels="<O,O30.0_S0.1_1.0_S1_A30.4_S6,N>" file="OpenCSS_OVLP30.0_SIL0.1_1.0_SESS1_ACTUAL30.4_SEG6" channel="0" sequence="2" R_T1="1.760" R_T2="3.790" word_aux="h_t1+t2,h_conf">
+C,"sir","sir",1.850+2.370,0.000000:C,"march","march",2.750+3.030,0.000000:S,"sixteenth","unhappy",3.560+4.220,0.000000
+</PATH>
+<PATH id="(B-001)" word_cnt="8" labels="<O,O30.0_S0.1_1.0_S1_A30.4_S6,N>" file="OpenCSS_OVLP30.0_SIL0.1_1.0_SESS1_ACTUAL30.4_SEG6" channel="0" sequence="3" R_T1="9.120" R_T2="11.810" word_aux="h_t1+t2,h_conf">
+C,"and","and",9.100+9.260,0.000000:C,"what","what",9.260+9.430,0.000000:C,"sort","sort",9.430+9.610,0.000000:C,"of","of",9.610+9.720,0.000000:C,"evidence","evidence",9.720+10.210,0.000000:C,"is","is",10.210+10.470,0.000000:C,"logically","logically",10.500+11.030,0.000000:C,"possible","possible",11.030+11.720,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>

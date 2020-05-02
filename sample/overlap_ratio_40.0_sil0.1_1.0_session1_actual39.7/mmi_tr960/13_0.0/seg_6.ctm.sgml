@@ -1,0 +1,12 @@
+<SYSTEM title="seg_6" ref_fname="./tmpe7ej5ox5/test.stm" hyp_fname="./tmpe7ej5ox5/test.ctm" creation_date="Fri May  1 13:12:52 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
+<SPEAKER id="A">
+<PATH id="(A-000)" word_cnt="32" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S6,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG6" channel="0" sequence="0" R_T1="0.000" R_T2="17.070" word_aux="h_t1+t2,h_conf">
+C,"those","those",0.090+0.570,0.000000:C,"pretty","pretty",0.570+1.050,0.000000:C,"wrongs","wrongs",1.050+1.660,0.000000:C,"that","that",1.660+1.900,0.000000:C,"liberty","liberty",1.900+2.360,0.000000:I,,"can",2.360+2.590,0.000000:S,"commits","death",2.590+3.410,0.000000:C,"when","when",4.280+4.510,0.000000:C,"i","i",4.510+4.730,0.000000:C,"am","am",4.730+4.890,0.000000:C,"some","some",4.890+5.290,0.000000:C,"time","time",5.290+5.750,0.000000:C,"absent","absent",5.750+6.380,0.000000:C,"from","from",6.380+6.610,0.000000:C,"thy","thy",6.610+6.840,0.000000:C,"heart","heart",6.840+7.490,0.000000:C,"thy","thy",8.510+8.810,0.000000:C,"beauty","beauty",8.810+9.760,0.000000:C,"and","and",9.900+10.170,0.000000:C,"thy","thy",10.170+10.410,0.000000:C,"years","years",10.410+11.050,0.000000:C,"full","full",11.050+11.460,0.000000:C,"well","well",11.460+11.840,0.000000:I,,"the",11.840+11.930,0.000000:S,"befits","affairs",11.930+12.640,0.000000:C,"for","for",13.380+13.640,0.000000:D,"still",,,:D,"temptation",,,:D,"follows",,,:D,"where",,,:D,"thou",,,:D,"art",,,
+</PATH>
+</SPEAKER>
+<SPEAKER id="B">
+<PATH id="(B-000)" word_cnt="13" labels="<O,O40.0_S0.1_1.0_S1_A39.7_S6,N>" file="OpenCSS_OVLP40.0_SIL0.1_1.0_SESS1_ACTUAL39.7_SEG6" channel="0" sequence="1" R_T1="13.890" R_T2="16.950" word_aux="h_t1+t2,h_conf">
+D,"she",,,:D,"saves",,,:D,"her",,,:S,"hand","steady",13.640+14.090,0.000000:S,"too","citizen",14.090+14.790,0.000000:S,"she's","chauvelin",14.790+15.440,0.000000:S,"at","is",15.440+15.560,0.000000:S,"her","out",15.560+15.690,0.000000:S,"best","of",15.690+15.770,0.000000:S,"in","fashion",15.770+16.160,0.000000:C,"the","the",16.160+16.240,0.000000:S,"second","sub",16.240+16.470,0.000000:S,"act","looked",16.470+17.040,0.000000
+</PATH>
+</SPEAKER>
+</SYSTEM>
