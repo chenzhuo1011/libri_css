@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import argparse, os, glob, tqdm, zipfile, webrtcvad
+import argparse, os, glob, tqdm, zipfile
 import soundfile as sf
 
 
