@@ -34,12 +34,8 @@ We use SCTK, the NIST Scoring Toolkit, for evaluation. This can be installed as 
     - tqdm
 
 
-### Windows
-If you want to run this on a Windows machine with WSL, dos2unix must be installed beforehand. 
-
-
 ## ASR execution example 
-To be updated by Zhuo. 
+This is being prepared for publication. The status will be updated by 5/6/20. 
 
 
 ## ASR output scoring example
