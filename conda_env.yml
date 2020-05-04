@@ -1,4 +1,4 @@
-name: libricss
+name: libricss_release
 channels:
   - conda-forge
   - defaults
@@ -40,5 +40,3 @@ dependencies:
     - numpy==1.18.3
     - tqdm==4.45.0
     - webrtcvad==2.0.10
-prefix: /home/tayoshio/tools/miniconda3/envs/libricss
-
