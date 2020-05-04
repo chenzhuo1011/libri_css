@@ -71,6 +71,8 @@ def main(args):
 
     # We wenerate ASR input data under the original data directory. 
     baseline_dir_seg = os.path.join(data_path, 'baseline', 'segments')
+    single_channel_dir =  os.path.join(data_path, 'monaural')
+    
     os.makedirs(baseline_dir_seg, exist_ok=True)
 
     # Create some directories. 
@@ -84,33 +86,26 @@ def main(args):
     decoding_result = os.path.join(baseline_dir_seg, 'decoding_result')
     os.makedirs(decoding_result, exist_ok=True)
 
-    # In this baseline script, we create single channel audio files. 
+    # In this baseline script, we create single channel audio files. the single channel data has been step 
     with open(decoding_cmd + '/meeting_list.scp', 'w') as f:
-        condition = ('0L','0S','OV10','OV20','OV30','OV40')
-        for cond in tqdm.tqdm(condition):
-            meeting = glob.glob(os.path.join(data_path, cond, 'overlap*'))
-            for meet in meeting:
-                # Extract the first channel signals.            
-                meeting_name = os.path.basename(meet)
-                source_data_path = os.path.join(meet, 'record', 'segments')
-                tgt_data_path = os.path.join(baseline_dir_seg, 'single_channel_recording', meeting_name)
-                os.makedirs(tgt_data_path, exist_ok=True)
-                save_single_channel_wav(source_data_path, tgt_data_path)
+        meeting = glob.glob(os.path.join(single_channel_dir,'overlap*'))
+        for meet in meeting:
+            # Extract the first channel signals.            
+            meeting_name = os.path.basename(meet)
+            # Do segmentation.             
+            seg = segmentor(args.merge_margin, args.cut_margin, res_path=result_dir, vad_setting=0)
 
-                # Do segmentation.             
-                seg = segmentor(args.merge_margin, args.cut_margin, res_path=result_dir, vad_setting=0)
+            all_wav = glob.glob(meet + '/*.wav')
+            for audio in tqdm.tqdm(all_wav):
+                seg.get_segment(audio, meeting_name)
 
-                all_wav = glob.glob(tgt_data_path + '/*.wav')
-                for audio in tqdm.tqdm(all_wav):
-                    seg.get_segment(audio, meeting_name)
-
-                # Zip up the segmented files and add the zip location to the output file list. 
-                zip_file = get_zip(zip_dir, meeting_name, result_dir)
-                f.write(zip_file + '\n')
+            # Zip up the segmented files and add the zip location to the output file list. 
+            zip_file = get_zip(zip_dir, meeting_name, result_dir)
+            f.write(zip_file + '\n')
 
     # Create an ASR script. 
     with open(decoding_cmd + '/decode_batch_960.sh','w') as f:
-        cmd = 'sh '+ args.tool_path +'/run_asr.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' .'
+        cmd = 'sh '+ args.tool_path +'/run_asr.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . '
         f.write(cmd+'\n')
 
 
