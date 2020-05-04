@@ -1,4 +1,5 @@
 path.sh
+exp/
 
 # Python #
 __pycache__/
