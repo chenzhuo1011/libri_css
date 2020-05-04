@@ -1,5 +1,6 @@
 path.sh
 exp/
+external_tools/
 
 # Python #
 __pycache__/
