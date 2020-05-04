@@ -4,8 +4,10 @@ PYTHON=python
 
 # args
 prep_script=./python/gen_asrinput_baseline.py
-libricss_path=/data/zhuc/libricss
+libricss_path=/data/zhuc/libricss/for_release
 script_path=./scripts
+
+echo "$prep_script --data_path $libricss_path --tool_path $script_path"
 
 $PYTHON $prep_script --data_path $libricss_path --tool_path $script_path
 
