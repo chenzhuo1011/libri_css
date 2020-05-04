@@ -35,34 +35,37 @@ then
 fi
 
 
-# ##
-# ## Installing PyKaldi2
-# ##
+##
+## Installing PyKaldi2
+##
 
-# if [[ ! -d $PYKALDIPATH ]]
-# then
-#     read -p "Installing PyKaldi2 in $PYKALDIPATH. Hit Enter or type a target path name: " ret
-#     if [ ! -z "$ret" ]
-#     then
-#         PYKALDIPATH=$ret
-#     fi
+if [[ ! -d $PYKALDIPATH ]]
+then
+    read -p "Installing PyKaldi2 in $PYKALDIPATH. Hit Enter or type a target path name: " ret
+    if [ ! -z "$ret" ]
+    then
+        PYKALDIPATH=$ret
+    fi
 
-#     if [[ ! -d $PYKALDIPATH ]]
-#     then
-#         CWD=`pwd`
-#         git clone https://github.com/jzlianglu/pykaldi2.git $PYKALDIPATH
-#         cd $PYKALDIPATH
-#         docker pull pykaldi2docker/horovod-pykaldi:torch1.2
-#         cd $CWD
-#     else
-#         echo "$PYKALDIPATH exists. Skip PyKaldi2 installation."    
-#     fi
-# fi
+    if [[ ! -d $PYKALDIPATH ]]
+    then
+        CWD=`pwd`
+        git clone https://github.com/jzlianglu/pykaldi2.git $PYKALDIPATH
+        cd $PYKALDIPATH
+        docker pull pykaldi2docker/horovod-pykaldi:torch1.2
+        cd $CWD
+    else
+        echo "$PYKALDIPATH exists. Skip PyKaldi2 installation."    
+    fi
+fi
 
 
 ##
 ## Generate path.sh
 ##
 echo "export SCTKPATH=$SCTKPATH" > path.sh 
-# echo "export PYKALDIPATH=$PYKALDIPATH" >> path.sh
+echo "export PYKALDIPATH=$PYKALDIPATH" >> path.sh
 
+EXPROOT=`dirname $0`/exp
+EXPROOT=`realpath $EXPROOT`
+echo "export EXPROOT=$EXPROOT" >> path.sh
