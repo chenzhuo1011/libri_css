@@ -13,7 +13,7 @@ def make_argparse():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', required=True)
     parser.add_argument('--tool_path', required=True)
-
+    parser.add_argument('--asr_path', required=True)
 # parser.add_argument('-base_path', default='/data/zhuc/libricss/for_release/', type=str, required=False)
 # 	parser.add_argument('-tool_path', default='/data/zhuc/libricss/opencss/pykaldi2/example/OpenCSS', type=str, required=False)
     return parser
@@ -26,7 +26,8 @@ def main(args):
 
 	base_dir=args.data_path
 	tool_path=args.tool_path
-	
+	asr_path=args.asr_path
+
 	baseline_dir_utt=os.path.join(base_dir,'result','utterance_eval')
 	wav_dir=os.path.join(baseline_dir_utt,'separated_wavs')
 	zip_dir=os.path.join(baseline_dir_utt,'zip')
@@ -38,7 +39,7 @@ def main(args):
 	os.makedirs(decoding_cmd,exist_ok=True)
 	os.makedirs(decoding_result,exist_ok=True)
 
-	os.chdir(base_dir)
+	# os.chdir(base_dir)
 	all_wav=glob.glob(os.path.join(wav_dir,'*.wav'))
 	
 	# first get all transcription
@@ -83,10 +84,12 @@ def main(args):
 	with open(decoding_cmd+'/meeting_list.scp','w') as f:
 	    f.write(zip_file+'\n')
 
-	with open(decoding_cmd+'/decode_batch_960.sh','w') as f:
-	    cmd='sh '+ tool_path +'/decode_batch_960_utt.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'decoding_scp.scp')
-	    f.write(cmd+'\n')
-
+	os.makedirs(os.path.join('..','exp'),exist_ok=True)
+	print(os.getcwd())
+	print(os.path.join('..','exp'))
+	with open(os.path.join('..','exp','decode_separate_utterance.sh'),'w') as f:
+		cmd='sh '+ tool_path +'/run_asr_utterance.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'all_transcription.scp')+' '+asr_path
+		f.write(cmd+'\n')
 
 
 

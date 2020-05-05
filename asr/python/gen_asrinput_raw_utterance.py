@@ -16,6 +16,7 @@ def save_single_channel_wav(source_path,tgt_path):
 def main(args):
 	
 	base_dir=args.data_path
+	asr_path=args.asr_path
 	baseline_dir_utt=os.path.join(base_dir, 'monaural','utterances')
 	zip_dir=os.path.join(base_dir,'baseline','utterance','zip')
 	os.makedirs(zip_dir,exist_ok=True)
@@ -23,6 +24,7 @@ def main(args):
 
 	decoding_cmd=os.path.join(base_dir,'baseline','utterance','decoding_cmd')
 	decoding_result=os.path.join(base_dir,'baseline','utterance','decoding_result')
+
 	os.makedirs(decoding_cmd,exist_ok=True)
 	os.makedirs(decoding_result,exist_ok=True)
 
@@ -58,9 +60,10 @@ def main(args):
 	with open(decoding_cmd+'/meeting_list.scp','w') as f:
 		f.write(zip_file+'\n')
 	#  then make the decoding command
+	os.makedirs(os.path.join('..','exp'),exist_ok=True)
 
-	with open(decoding_cmd+'/decode_batch_960.sh','w') as f:
-		cmd='sh '+ tool_path +'/decode_batch_960_utt.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'all_transcription.scp')
+	with open(os.path.join('..','exp','decode_raw_utterance.sh'),'w') as f:
+		cmd='sh '+ tool_path +'/run_asr_utterance.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'all_transcription.scp')+' '+asr_path
 		f.write(cmd+'\n')
 
 
@@ -72,6 +75,7 @@ def make_argparse():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--data_path', required=True)
 	parser.add_argument('--tool_path', required=True)
+	parser.add_argument('--asr_path', required=True)
 
 	return parser
 	# parser = argparse.ArgumentParser()

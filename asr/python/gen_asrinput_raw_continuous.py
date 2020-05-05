@@ -68,7 +68,7 @@ def save_single_channel_wav(source_path, tgt_path):
 
 def main(args):
     data_path = args.data_path
-
+    asr_path=args.asr_path
     # We wenerate ASR input data under the original data directory. 
     baseline_dir_seg = os.path.join(data_path, 'baseline', 'segments')
     single_channel_dir =  os.path.join(data_path, 'monaural','segments')
@@ -104,10 +104,11 @@ def main(args):
             f.write(zip_file + '\n')
 
     # Create an ASR script. 
-    with open(decoding_cmd + '/decode_batch_960.sh','w') as f:
-        cmd = 'sh '+ args.tool_path +'/run_asr.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . '
-        f.write(cmd+'\n')
+    os.makedirs(os.path.join('..','exp'),exist_ok=True)
 
+    with open(os.path.join('..','exp','decode_raw_continuous.sh'),'w') as f:
+        cmd = 'sh '+ args.tool_path +'/run_asr_continuous.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . ' +asr_path
+        f.write(cmd+'\n')
 
 
 def make_argparse():
@@ -116,6 +117,7 @@ def make_argparse():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', required=True)
     parser.add_argument('--tool_path', required=True)
+    parser.add_argument('--asr_path', required=True)
 
     parser.add_argument('--cut_margin', default=0.25, type=float)
     parser.add_argument('--merge_margin', default=1, type=float)
