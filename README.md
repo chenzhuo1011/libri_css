@@ -64,6 +64,8 @@ Alternatively, you may run each step separately, which would be useful when you 
 
 ### Step-by-step execution (utterance-wise evaluation)
 
+TO BE ADDED.
+
 
 
 ## Some Details
@@ -85,3 +87,5 @@ audio files segment\_\*.wav (see Section 3.3.3 of [2]).
 The task is to trascribe each file and save the result in the CTM format as segment\_\*.ctm. Refer to http://my.fit.edu/~vkepuska/ece5527/sctk-2.3-rc1/doc/infmts.htm#ctm_fmt_name_0 for the CTM format specification. The result directory has to retain the original subdirectory structure, as in the "sample" directory. Then, your ASR CTM files can be evaluated with scoring/scripts/eval_continuous.sh. 
 
 ### Task (utterance-wise evaluation)
+
+TO BE ADDED.
