@@ -12,14 +12,11 @@ def save_single_channel_wav(source_path,tgt_path):
 		sf.write(tgt_path+'/'+fname,s[:,0],f)
 		
 
-
-
-
 # In[13]:
 def main(args):
 	
-	base_dir=args.base_path
-	baseline_dir_utt=os.path.join(base_dir, 'monaural','utterance')
+	base_dir=args.data_path
+	baseline_dir_utt=os.path.join(base_dir, 'monaural','utterances')
 	zip_dir=os.path.join(base_dir,'baseline','utterance','zip')
 	os.makedirs(zip_dir,exist_ok=True)
 	tool_path=args.tool_path
@@ -28,15 +25,6 @@ def main(args):
 	decoding_result=os.path.join(base_dir,'baseline','utterance','decoding_result')
 	os.makedirs(decoding_cmd,exist_ok=True)
 	os.makedirs(decoding_result,exist_ok=True)
-
-	# for cond in tqdm.tqdm(condition):
-	#     meeting=glob.glob(os.path.join(base_dir,cond,'overlap*'))
-	#     for meet in meeting:
-	#         meeting_name=os.path.basename(meet)
-	#         source_data_path=os.path.join(meet,'record','utterances')
-	#         tgt_data_path = os.path.join(baseline_dir_utt,'single_channel_recording',meeting_name)
-	#         os.makedirs(tgt_data_path,exist_ok=True)
-	#         save_single_channel_wav(source_data_path,tgt_data_path)
 
 	all_lines=[]
 	condition=['0L','0S','OV10','OV20','OV30','OV40']
@@ -51,7 +39,7 @@ def main(args):
 					utterances_id,trans=line.rstrip().split('\t')
 					all_lines.append(meeting_id+'_'+utterances_id[:-4]+'\t'+trans)
 				
-	with open(os.path.join(baseline_dir_utt,'all_transcription.scp'),'w') as f:
+	with open(os.path.join(decoding_cmd,'all_transcription.scp'),'w') as f:
 		for item in all_lines:
 			f.write(item+'\n')
 
@@ -72,7 +60,7 @@ def main(args):
 	#  then make the decoding command
 
 	with open(decoding_cmd+'/decode_batch_960.sh','w') as f:
-		cmd='sh '+ tool_path +'/decode_batch_960_utt.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(baseline_dir_utt,'all_transcription.scp')
+		cmd='sh '+ tool_path +'/decode_batch_960_utt.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'all_transcription.scp')
 		f.write(cmd+'\n')
 
 
