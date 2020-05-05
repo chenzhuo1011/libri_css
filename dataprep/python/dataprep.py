@@ -24,11 +24,14 @@ def main(args):
             # Extract the signals of the selected microphones. 
             meeting_name = os.path.basename(meet)
             source_data_path = os.path.join(meet, 'record', 'segments')
-            tgt_data_path = os.path.join(args.tgtpath, meeting_name)
-
+            tgt_data_path = os.path.join(args.tgtpath,'segments', meeting_name)
             os.makedirs(tgt_data_path, exist_ok=True)
             save_wav(source_data_path, tgt_data_path, mics=args.mics)
 
+            source_data_path = os.path.join(meet, 'record', 'utterances')
+            tgt_data_path = os.path.join(args.tgtpath, 'utterances',meeting_name)
+            os.makedirs(tgt_data_path, exist_ok=True)
+            save_wav(source_data_path, tgt_data_path, mics=args.mics)
 
 
 def make_argparse():

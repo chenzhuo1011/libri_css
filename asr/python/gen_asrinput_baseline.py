@@ -71,7 +71,7 @@ def main(args):
 
     # We wenerate ASR input data under the original data directory. 
     baseline_dir_seg = os.path.join(data_path, 'baseline', 'segments')
-    single_channel_dir =  os.path.join(data_path, 'monaural')
+    single_channel_dir =  os.path.join(data_path, 'monaural','segments')
     
     os.makedirs(baseline_dir_seg, exist_ok=True)
 
