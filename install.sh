@@ -50,9 +50,9 @@ then
     if [[ ! -d $PYKALDIPATH ]]
     then
         CWD=`pwd`
-        git clone https://github.com/jzlianglu/pykaldi2.git $PYKALDIPATH
+        git clone https://github.com/jzlianglu/pykaldi2.git -b libcss $PYKALDIPATH
         cd $PYKALDIPATH
-        docker pull pykaldi2docker/horovod-pykaldi:torch1.2
+        docker pull pykaldi2docker/horovod-pykaldi:libcss.v1.0
         cd $CWD
     else
         echo "$PYKALDIPATH exists. Skip PyKaldi2 installation."    
