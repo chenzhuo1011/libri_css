@@ -1,3 +1,4 @@
+#!/bin/bash
 
 file=$1
 outdir=$2
@@ -34,10 +35,9 @@ kes.ark" ark:$srcdir/lat.ark > $srcdir/decode.1.log 2>&1
 
 wait
 
-$asrdir/pykaldi2/example/OpenCSSlocal/lmrescore_const_arpa.sh $asrdir/librispeech/s5/data/lang_test_tgsmall\
+$asrdir/pykaldi2/example/OpenCSS/local/lmrescore_const_arpa.sh $asrdir/librispeech/s5/data/lang_test_tgsmall\
 $asrdir/librispeech/s5/data/lang_test_fglarge $srcdir $tgtdir
 
-
-$asrdir/pykaldi2/example/OpenCSS/local/score_opencss.sh $asrdir/librispeech/s5/data/lang_test_fglarge $tgtdir $alidir/final.mdl
+$asrdir/pykaldi2/example/OpenCSS/local/score_ctm.sh $asrdir/librispeech/s5/data/lang_test_fglarge $tgtdir $alidir/final.mdl
 
 done <"$file"

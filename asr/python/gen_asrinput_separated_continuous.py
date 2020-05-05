@@ -61,6 +61,7 @@ def make_argparse():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--data_path', required=True)
 	parser.add_argument('--tool_path', required=True)
+	parser.add_argument('--asr_path', required=True)
 
 	parser.add_argument('--cut_margin', default=0.25, type=float)
 	parser.add_argument('--merge_margin', default=1, type=float)
@@ -78,7 +79,7 @@ def main(args):
 	cut_margin=args.cut_margin
 	merge_margin=args.merge_margin
 	tool_path=args.tool_path
-	
+	asr_path=args.asr_path
 	base_path=args.data_path
 
 	vad_dir=os.path.join(base_path,'result','segment_eval','vad')
@@ -86,23 +87,19 @@ def main(args):
 	os.makedirs(vad_dir,exist_ok=True)
 	os.makedirs(zip_dir,exist_ok=True)
 
-	decoding_cmd_dir=os.path.join(base_path,'result','segment_eval','decoding_cmd')
-	decoding_result_dir=os.path.join(base_path,'result','segment_eval','decoding_result')
-	os.makedirs(decoding_cmd_dir,exist_ok=True)
-	os.makedirs(decoding_result_dir,exist_ok=True)
+	decoding_cmd=os.path.join(base_path,'result','segment_eval','decoding_cmd')
+	decoding_result=os.path.join(base_path,'result','segment_eval','decoding_result')
+	os.makedirs(decoding_cmd,exist_ok=True)
+	os.makedirs(decoding_result,exist_ok=True)
 	
 	wav_dir=os.path.join(base_path,'result','segment_eval','separated_wavs')
 
 	seg=segmentor(merge_margin,cut_margin,res_path=vad_dir,vad_setting=0)
 
-# test one meeting
-
-	# meeting='overlap_ratio_40.0_sil0.1_1.0_session9_actual39.9'
-
 	meeting_list=glob.glob(os.path.join(wav_dir,'overlap_ratio*'))
 	meeting_list=[os.path.basename(x) for x in meeting_list]
 
-	with open(os.path.join(decoding_cmd_dir,'meeting_list.scp'),'w') as f:
+	with open(os.path.join(decoding_cmd,'meeting_list.scp'),'w') as f:
 
 		for meeting in meeting_list:
 			all_wav=glob.glob(os.path.join(wav_dir,meeting,'*.wav'))
@@ -115,10 +112,10 @@ def main(args):
 			f.write(zip_dir+'/'+meeting+'.zip'+'\n')
 	#  then make the decoding command
 
-	with open(os.path.join(decoding_cmd_dir,'decode_batch_960.sh'),'w') as f:
-		cmd='sh '+ tool_path +'/decode_batch_960.sh ' + decoding_cmd_dir+'/meeting_list.scp ' +decoding_result_dir+' .'
+	os.makedirs(os.path.join('..','exp'),exist_ok=True)
+	with open(os.path.join('..','exp','decode_separate_continuous.sh'),'w') as f:
+		cmd = 'sh '+ args.tool_path +'/run_asr_continuous.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . ' +asr_path
 		f.write(cmd+'\n')
-			
 
 if __name__ == '__main__':
 	parser = make_argparse()

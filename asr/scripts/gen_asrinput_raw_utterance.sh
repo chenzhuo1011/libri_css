@@ -3,7 +3,7 @@
 PYTHON=python
 
 # args
-prep_script=../python/gen_asrinput_raw_continuous.py
+prep_script=../python/gen_asrinput_raw_utterance.py
 libricss_path=/data/zhuc/libricss/for_release
 script_path=../scripts
 asr_path=/data/zhuc/libricss/opencss
