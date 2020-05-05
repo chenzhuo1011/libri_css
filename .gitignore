@@ -10,6 +10,8 @@ __pycache__/
 # Temp files #
 tmp*
 temp*
+tmp/
+temp/
 ~*
 
 # Result files #
