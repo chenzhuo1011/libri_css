@@ -45,10 +45,11 @@ Alternatively, you may run each step separately, which would be useful when you 
 3. Finally, the ASR results can be scored as follows. 
     ```
     cd scoring
-    ./scripts/eval_noproc.sh
-    python ./python/report.py --inputdir ../sample --decode_cfg 13_0.0
+    ./scripts/eval_continuous.sh ../sample
+    python ./python/report.py --inputdir ../sample
     ```  
-    The last command should print out the baseline (i.e., w/o separation) WER for each overlap condition as follows. 
+    This performs evaluation for the sample CTM files provided under "sample" directory, which correspond to the "no separation" results of Table 2 in [2].
+    The last Python script, scoring/python/report.py, will print out the results as follows. 
     ```  
     Result Summary
     --------------
@@ -60,7 +61,6 @@ Alternatively, you may run each step separately, which would be useful when you 
     30       : 34.7
     40       : 40.8
     ```  
-    This corresponds to the "no separation" results of Table 2 in [2]. 
 
 
 
@@ -80,7 +80,6 @@ As a result of the data preparation step,  the 7-ch and 1-ch test data are creat
 These directories consist of subdirectories named overlap_ratio\_\*\_sil\*\_\*\_session\*\_actual\*, each containing chunked mini-session 
 audio files segment\_\*.wav (see Section 3.3.3 of [2]). 
 
-The task is to trascribe each file and save the result in the CTM format as segment\_\*.ctm. Refer to http://my.fit.edu/~vkepuska/ece5527/sctk-2.3-rc1/doc/infmts.htm#ctm_fmt_name_0 for the CTM format specification.  
-
+The task is to trascribe each file and save the result in the CTM format as segment\_\*.ctm. Refer to http://my.fit.edu/~vkepuska/ece5527/sctk-2.3-rc1/doc/infmts.htm#ctm_fmt_name_0 for the CTM format specification. The result directory has to retain the original subdirectory structure, as in the "sample" directory. Then, your ASR CTM files can be evaluated with scoring/scripts/eval_continuous.sh. 
 
 ### Task (utterance-wise evaluation)
