@@ -31,7 +31,7 @@ The following script executes all steps, including data preparation, ASR, and ev
 ```
 At this moment, this is not included in the released version of this repository. This will be updated soon. 
 
-### Step-by-step execution
+### Step-by-step execution (continuous input evaluation)
 Alternatively, you may run each step separately, which would be useful when you don't want to use the default ASR system. 
 1. First, the data can be downloaded and preprocessed as follows. 
     ```
@@ -61,6 +61,8 @@ Alternatively, you may run each step separately, which would be useful when you 
     30       : 34.7
     40       : 40.8
     ```  
+
+### Step-by-step execution (utterance-wise evaluation)
 
 
 
