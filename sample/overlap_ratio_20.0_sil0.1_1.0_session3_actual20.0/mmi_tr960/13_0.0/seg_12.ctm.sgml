@@ -1,7 +1,0 @@
-<SYSTEM title="seg_12" ref_fname="./tmp6vocbhuf/test.stm" hyp_fname="./tmp6vocbhuf/test.ctm" creation_date="Fri May  1 13:16:01 2020" format="2.4" frag_corr="TRUE" opt_del="TRUE" weight_ali="FALSE" weight_filename="">
-<SPEAKER id="A">
-<PATH id="(A-000)" word_cnt="14" labels="<O,O20.0_S0.1_1.0_S3_A20.0_S12,N>" file="OpenCSS_OVLP20.0_SIL0.1_1.0_SESS3_ACTUAL20.0_SEG12" channel="0" sequence="0" R_T1="0.000" R_T2="4.080" word_aux="h_t1+t2,h_conf">
-C,"he","he",0.030+0.180,0.000000:C,"seemed","seemed",0.180+0.700,0.000000:C,"to","to",0.700+0.880,0.000000:C,"wait","wait",0.880+1.190,0.000000:C,"for","for",1.190+1.280,0.000000:C,"her","her",1.280+1.420,0.000000:C,"reply","reply",1.420+1.960,0.000000:C,"but","but",1.960+2.190,0.000000:C,"as","as",2.190+2.390,0.000000:C,"she","she",2.390+2.570,0.000000:C,"made","made",2.570+2.880,0.000000:C,"none","none",2.880+3.190,0.000000:C,"he","he",3.220+3.340,0.000000:C,"proceeded","proceeded",3.340+4.010,0.000000
-</PATH>
-</SPEAKER>
-</SYSTEM>

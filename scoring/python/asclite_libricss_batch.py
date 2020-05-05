@@ -19,13 +19,13 @@ def main(args):
     subdirs = os.listdir(args.decode_root)
 
     for subdir in subdirs:
-        subdir = os.path.join(args.decode_root, subdir, args.model_name)
+        subdir = os.path.join(args.decode_root, subdir)
 
         if not os.path.isdir(subdir):
             continue
 
         if args.decode_cfgs is None:
-            decode_cfgs = os.listdir(subdir)
+            decode_cfgs = ['']
         else:
             decode_cfgs = args.decode_cfgs
 
@@ -50,10 +50,8 @@ def make_argparse():
                         help='Root of decoding directories.')                        
     parser.add_argument('--sctkpath', metavar='<path>', required=True, 
                         help='Path to asclite.')
-    parser.add_argument('--model_name', metavar='<str>', default='mmi_tr960', 
-                        help='AM name.')
     parser.add_argument('--decode_cfgs', nargs='+', 
-                        help='Decoding configurations. If not specified, all results will be scored.')
+                        help='Decoding configurations (optional).')
 
  
     return parser

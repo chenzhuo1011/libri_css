@@ -1,5 +1,6 @@
 path.sh
 exp/
+external_tools/
 
 # Python #
 __pycache__/
@@ -9,6 +10,8 @@ __pycache__/
 # Temp files #
 tmp*
 temp*
+tmp/
+temp/
 ~*
 
 # Result files #

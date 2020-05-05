@@ -17,7 +17,7 @@ def main(args):
         if len(subdir_fields) != 7:
             raise RuntimeError('Invalid subdirectory name: {}'.format(subdir))
 
-        tgtdir = os.path.join(args.inputdir, subdir, args.model_name, args.decode_cfg)
+        tgtdir = os.path.join(args.inputdir, subdir, args.decode_cfg)
         if not os.path.isdir(tgtdir):
             continue
 
@@ -75,10 +75,8 @@ def make_argparse():
 
     # Set up an argument parser.
     parser.add_argument('--inputdir', metavar='<dir>', required=True)
-    parser.add_argument('--decode_cfg', metavar='<str>', required=True, 
-                        help='Decoder configuration.')
-    parser.add_argument('--model_name', metavar='<str>', default='mmi_tr960',
-                        help='AM name.')
+    parser.add_argument('--decode_cfg', metavar='<str>', default='', 
+                        help='Decoder configuration (optional).')
 
     return parser
 

@@ -96,13 +96,19 @@ def run_asclite(orig_stmfile, orig_ctmfile, orig_glmfile, sctkpath, noverlaps):
 
 
 def main(args):
+    ptrn = re.compile('.*(overlap_ratio[^/]+)')
+
     if args.ignore_overlap:
         noverlaps = 1
     else:
         noverlaps = 8
 
-    # overlap_ratio_0.0_sil0.1_0.5_session0_actual0.0/mmi_tr960/13_0.0
-    session = os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(args.decodedir))))
+    # overlap_ratio_0.0_sil0.1_0.5_session0_actual0.0; or 
+    # overlap_ratio_0.0_sil0.1_0.5_session0_actual0.0/**
+    m = ptrn.match( os.path.abspath(args.decodedir) )
+    if m is None:
+        raise RuntimeError('Decoding directory name does not match the expected format: {}'.format(args.decodedir))
+    session = m.group(1)
 
     ctmfiles = glob.glob(os.path.join(args.decodedir, '*.ctm'))
     for ctmfile in ctmfiles:

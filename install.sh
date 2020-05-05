@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # If you have already installed SCTK on your machine, you may use it by pointing to the exising SCTK directory. 
-SCTKPATH=$HOME/sctk
+SCTKPATH=external_tools/sctk
 # If you have already installed PyKaldi2 on your machine, you may use it by pointing to the exising PyKaldi2 directory. 
-PYKALDIPATH=$HOME/pykaldi2
+PYKALDIPATH=external_tools/pykaldi2
 
 
 ##
@@ -12,7 +12,7 @@ PYKALDIPATH=$HOME/pykaldi2
 
 if [[ ! -d $SCTKPATH ]]
 then
-    read -p "Installing SCTK in $SCTKPATH. Hit Enter or type a target path name: " ret
+    read -p "Installing SCTK in $SCTKPATH. Hit Enter or type an alternative install path name: " ret
     if [ ! -z "$ret" ]
     then
         SCTKPATH=$ret
@@ -41,7 +41,7 @@ fi
 
 if [[ ! -d $PYKALDIPATH ]]
 then
-    read -p "Installing PyKaldi2 in $PYKALDIPATH. Hit Enter or type a target path name: " ret
+    read -p "Installing PyKaldi2 in $PYKALDIPATH. Hit Enter or type an alternative install path name: " ret
     if [ ! -z "$ret" ]
     then
         PYKALDIPATH=$ret
@@ -60,10 +60,13 @@ then
 fi
 
 
+
 ##
 ## Generate path.sh
 ##
+SCTKPATH=`realpath $SCTKPATH`
 echo "export SCTKPATH=$SCTKPATH" > path.sh 
+PYKALDIPATH=`realpath $PYKALDIPATH`
 echo "export PYKALDIPATH=$PYKALDIPATH" >> path.sh
 
 EXPROOT=`dirname $0`/exp
