@@ -12,9 +12,6 @@ def save_single_channel_wav(source_path,tgt_path):
 		sf.write(tgt_path+'/'+fname,s[:,0],f)
 		
 
-
-
-
 # In[13]:
 def main(args):
 	
