@@ -10,24 +10,26 @@ Continuous speech separation (CSS) is an approach to handling overlapped speech 
 We use SCTK (https://github.com/usnistgov/SCTK), the NIST Scoring Toolkit, for evaluation and PyKaldi2 (https://github.com/jzlianglu/pykaldi2), a Python internface to Kaldi for ASR. They can be installed as follows. 
 ```
 ./install.sh
+source ./path.sh
 ```
+The second command defines some environmental variables, where path.sh is created by running install.sh.
 
 We also use some Python packages. Assuming you are using conda, the simplest way to install all required dependencies is to reate a conda environment as follows. 
 ```
 conda env create -f conda_env.yml
+conda activate libricss_release
 ```
-This creates a conda environment named libricss, which can be activated as follows. 
-```
-source activate libricss
-```
+The second command activates the newly created environment named libricss_release. 
+
 
 ## Getting Started
 
-### One-step script (UNDER DEVELOPMENT)
+### One-step script (YET TO BE RELEASED)
 The following script executes all steps, including data preparation, ASR, and evaluation. 
 ```
 ./run_all.sh
 ```
+At this moment, this is not included in the released version of this repository. This will be updated soon. 
 
 ### Step-by-step execution
 Alternatively, you may run each step separately, which would be useful when you don't want to use the default ASR system. 
@@ -62,24 +64,23 @@ Alternatively, you may run each step separately, which would be useful when you 
 
 
 
-# Further Descriptions
+## Some Details
 
-## Data
-LibriCSS consists of distant microphone recordings of concatenated LibriSpeech utterances played back from loudspeakers in an office room, which enables evaluation of speech separation algorithms that handle long form audio. See [2] for details of the data. 
+### Data
+NOTE: WE RECOMMEND THAT YOU USE dataprep/scripts/dataprep.sh MENTIONED ABOVE TO OBTAIN THE DATA.
 
-The data can be downloaded at: 
-https://drive.google.com/file/d/1Piioxd5G_85K9Bhcr8ebdhXx0CnaHy7l/view
+LibriCSS consists of distant microphone recordings of concatenated LibriSpeech utterances played back from loudspeakers in an office room, which enables evaluation of speech separation algorithms that handle long form audio. See [2] for details of the data. The data can be downloaded at https://drive.google.com/file/d/1Piioxd5G_85K9Bhcr8ebdhXx0CnaHy7l/view. The archive file contains only the original "mini-session" recordings (see Section 3.1 of [2]) as well as the source signals played back from the loudspeakers. By following the instruction described in the README file, you should be able to generate the data for both utterance-wise evaluation (see Section 3.3.2 of [2]) and continuous input evaluation (Section 3.3.3 of [2]). 
 
-The archive file contains only the original "mini-session" recordings (see Section 3.1 of [2]) as well as the source signals played back from the loudspeakers. By following the instruction described in the README file, you should be able to generate the data for both utterance-wise evaluation (see Section 3.3.2 of [2]) and continuous input evaluation (Section 3.3.3 of [2]). 
+The original directory structure is different from that the ASR/scoring tools expect. Python script dataprep/python/dataprep.py reorganizes the recordings. To see how it can be used, refer to dataprep/scripts/dataprep.sh (which executes all the necessary steps to start experiments). 
 
 
-## Task
-As a result of the data preparation step,  the 7-ch and 1-ch test data are created under $EXPROOT/7ch and $EXPROOT/monaural, respectively. 
+
+### Task (continuous input evaluation)
+As a result of the data preparation step,  the 7-ch and 1-ch test data are created by default under $EXPROOT/7ch and $EXPROOT/monaural, respectively (EXPROOT is defined in path.sh). 
 These directories consist of subdirectories named overlap_ratio\_\*\_sil\*\_\*\_session\*\_actual\*, each containing chunked mini-session 
 audio files segment\_\*.wav (see Section 3.3.3 of [2]). 
 
 The task is to trascribe each file and save the result in the CTM format as segment\_\*.ctm. Refer to http://my.fit.edu/~vkepuska/ece5527/sctk-2.3-rc1/doc/infmts.htm#ctm_fmt_name_0 for the CTM format specification.  
 
 
-
-
+### Task (utterance-wise evaluation)
