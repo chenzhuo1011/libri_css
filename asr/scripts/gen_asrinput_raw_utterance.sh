@@ -4,7 +4,7 @@ PYTHON=python
 
 # args
 prep_script=../python/gen_asrinput_raw_utterance.py
-libricss_path=$DATAROOT
+libricss_path=$EXPROOT/data
 script_path=../scripts
 asr_path=$AMPATH
 
