@@ -4,7 +4,7 @@ PYTHON=python
 
 # args
 prep_script=../python/get_wer.py
-libricss_path=/data/zhuc/libricss/for_release
+libricss_path=$DATAROOT
 script_path=./scripts
 experiment_setup=raw
 
