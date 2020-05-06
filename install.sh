@@ -34,7 +34,6 @@ then
     fi
 fi
 
-
 ##
 ## Installing PyKaldi2
 ##
@@ -50,16 +49,22 @@ then
     if [[ ! -d $PYKALDIPATH ]]
     then
         CWD=`pwd`
-        git clone https://github.com/jzlianglu/pykaldi2.git $PYKALDIPATH
+        git clone https://github.com/jzlianglu/pykaldi2.git -b libcss $PYKALDIPATH
         cd $PYKALDIPATH
-        docker pull pykaldi2docker/horovod-pykaldi:torch1.2
+        sudo docker pull pykaldi2docker/horovod-pykaldi:libcss.v1.0
         cd $CWD
     else
         echo "$PYKALDIPATH exists. Skip PyKaldi2 installation."    
     fi
+    
+  cd $PYKALDIPATH
+
+
+   wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Xon9jS2vEDOcwYAMrN2XAMrL-7PE2qXj' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Xon9jS2vEDOcwYAMrN2XAMrL-7PE2qXj" -O libri_AM.zip && rm -rf /tmp/cookies.txt
+    # unzip
+  unzip libri_AM.zip
+  cd $CWD  
 fi
-
-
 
 ##
 ## Generate path.sh
@@ -68,6 +73,9 @@ SCTKPATH=`realpath $SCTKPATH`
 echo "export SCTKPATH=$SCTKPATH" > path.sh 
 PYKALDIPATH=`realpath $PYKALDIPATH`
 echo "export PYKALDIPATH=$PYKALDIPATH" >> path.sh
+
+echo "export AMPATH=$AMPATH/AM" >> path.sh
+
 
 EXPROOT=`dirname $0`/exp
 EXPROOT=`realpath $EXPROOT`

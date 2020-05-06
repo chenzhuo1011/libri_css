@@ -40,8 +40,16 @@ Alternatively, you may run each step separately, which would be useful when you 
     ```
 2. Then, ASR can be run as 
     ```
-    <ASR command>
+    cd ..
+    sudo sh activate.sh
+    sh asr/script/asr_path.sh
+    cd asr/script
+    ./gen_asrinput_raw_continuous.sh
+    cd ../exp
+    . decode_raw_continuous.sh
     ```
+    This will generate the CTM file for each meeting, under exp/data/baseline/segments/decoding_result
+    
 3. Finally, the ASR results can be scored as follows. 
     ```
     cd scoring
@@ -64,8 +72,32 @@ Alternatively, you may run each step separately, which would be useful when you 
 
 ### Step-by-step execution (utterance-wise evaluation)
 
-TO BE ADDED.
+1. First, download the AM and the pykaldi2 repository, this step should be done in installation step above
 
+2. Then activate the docker, by running:
+  ```
+  sudo sh activate.sh
+  sh asr/script/asr_path.sh
+  ```
+
+3. Then the decoding command can be generated, and perform decoding
+
+  ```
+  cd asr/script
+  ./gen_asrinput_raw_utterance.sh
+  cd ../exp
+  . decode_raw_utterance.sh
+  ```
+  
+4. Finally, collect the wer with following command
+
+  ```
+  cd ../scripts
+  . run_wer_raw_utterance.sh
+  
+  And the result will be print, can be found exp/data/baseline/utterance/decoding_result
+  
+  ```
 
 
 ## Some Details

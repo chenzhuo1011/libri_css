@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # args
-thisdir=`dirname $0`
-thisdir=`realpath $thisdir`
+prep_script=../python/gen_asrinput_raw_continuous.py
+libricss_path=$EXPROOT/data
+script_path=../scripts
+asr_path=$AMPATH
 
 prep_script=$thisdir/../python/gen_asrinput_raw_continuous.py
 libricss_path=$EXPROOT/data
