@@ -7,14 +7,14 @@ Continuous speech separation (CSS) is an approach to handling overlapped speech 
 
 ## Requirements
 
-We use SCTK (https://github.com/usnistgov/SCTK), the NIST Scoring Toolkit, for evaluation and PyKaldi2 (https://github.com/jzlianglu/pykaldi2), a Python internface to Kaldi for ASR. They can be installed as follows. 
+We use SCTK (https://github.com/usnistgov/SCTK), the NIST Scoring Toolkit, for evaluation and PyKaldi2 (https://github.com/jzlianglu/pykaldi2), a Python internface to Kaldi for ASR. They can be installed as follows. Note that you need to have Docker enabled on your machine as required by PyKaldi2. 
 ```
 ./install.sh
 source ./path.sh
 ```
-The second command defines some environmental variables, where path.sh is created by running install.sh.
+The second command defines some environmental variables, where path.sh is generated as a result of the first command. 
 
-We also use some Python packages. Assuming you are using conda, the simplest way to install all required dependencies is to reate a conda environment as follows. 
+We also use some Python packages. Assuming you are using conda, the simplest way to install all required dependencies is to create a conda environment as follows. 
 ```
 conda env create -f conda_env.yml
 conda activate libricss_release
@@ -24,14 +24,8 @@ The second command activates the newly created environment named libricss_releas
 
 ## Getting Started
 
-### One-step script (YET TO BE RELEASED)
-The following script executes all steps, including data preparation, ASR, and evaluation. 
-```
-./run_all.sh
-```
-At this moment, this is not included in the released version of this repository. This will be updated soon. 
 
-### Step-by-step execution (continuous input evaluation)
+### Continuous input evaluation
 Alternatively, you may run each step separately, which would be useful when you don't want to use the default ASR system. 
 1. First, the data can be downloaded and preprocessed as follows. 
     ```
@@ -42,13 +36,13 @@ Alternatively, you may run each step separately, which would be useful when you 
     ```
     cd ..
     sudo sh activate.sh
-    sh asr/script/asr_path.sh
+    source asr/script/asr_path.sh
     cd asr/script
     ./gen_asrinput_raw_continuous.sh
     cd ../exp
     . decode_raw_continuous.sh
     ```
-    This will generate the CTM file for each meeting, under exp/data/baseline/segments/decoding_result
+    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
     
 3. Finally, the ASR results can be scored as follows. 
     ```
@@ -70,34 +64,37 @@ Alternatively, you may run each step separately, which would be useful when you 
     40       : 40.8
     ```  
 
-### Step-by-step execution (utterance-wise evaluation)
+### Utterance-wise evaluation
 
 1. First, download the AM and the pykaldi2 repository, this step should be done in installation step above
 
 2. Then activate the docker, by running:
-  ```
-  sudo sh activate.sh
-  sh asr/script/asr_path.sh
-  ```
+    ```
+    sudo sh activate.sh
+    sh asr/script/asr_path.sh
+    ```
 
 3. Then the decoding command can be generated, and perform decoding
-
-  ```
-  cd asr/script
-  ./gen_asrinput_raw_utterance.sh
-  cd ../exp
-  . decode_raw_utterance.sh
-  ```
+    ```
+    cd asr/script
+    ./gen_asrinput_raw_utterance.sh
+    cd ../exp
+    . decode_raw_utterance.sh
+    ```
   
 4. Finally, collect the wer with following command
+    ```
+    cd ../scripts
+    . run_wer_raw_utterance.sh
+    ```
+    And the result will be print, can be found exp/data/baseline/utterance/decoding_result
+  
 
-  ```
-  cd ../scripts
-  . run_wer_raw_utterance.sh
-  
-  And the result will be print, can be found exp/data/baseline/utterance/decoding_result
-  
-  ```
+
+## Plan
+
+The current repository generates only the baseline results without separation processing. For those of you focusing on front-end speech separation algorithms, we are planning to add example CSS output waveforms and ASR scripts using them. 
+
 
 
 ## Some Details
@@ -121,3 +118,5 @@ The task is to trascribe each file and save the result in the CTM format as segm
 ### Task (utterance-wise evaluation)
 
 TO BE ADDED.
+
+
