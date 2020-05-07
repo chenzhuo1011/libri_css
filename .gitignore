@@ -1,0 +1,26 @@
+path.sh
+exp/
+external_tools/
+
+# Python #
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temp files #
+tmp*
+temp*
+tmp/
+temp/
+~*
+
+# Result files #
+*.sys
+*.raw
+*.sgml
+summary.txt
+
+# VS #
+.idea/
+.vs/
+.vscode/
