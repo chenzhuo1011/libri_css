@@ -8,27 +8,27 @@ PYKALDIPATH=external_tools/pykaldi2
 
 # Check if tools are installed.
 if ! which wget >/dev/null; then
-    echo "$0: wget is not installed."
-    exit 1;
+    echo "wget is not installed."
+    exit 1
 fi
 if ! which realpath >/dev/null; then
-    echo "$0: realpath is not installed."
-    exit 1;
+    echo "realpath is not installed."
+    exit 1
 fi
 if ! which docker >/dev/null; then
-    echo "$0: docker is not installed."
-    exit 1;
+    echo "docker is not installed."
+    exit 1
 fi
 if ! which git >/dev/null; then
-    echo "$0: git is not installed."
-    exit 1;
+    echo "git is not installed."
+    exit 1
 fi
 
 
 ##
 ## Installing SCTK. 
 ##
-if [[ ! -d $SCTKPATH ]]
+if [ ! -d $SCTKPATH ]
 then
     read -p "Installing SCTK in $SCTKPATH. Hit Enter or type an alternative install path name: " ret
     if [ ! -z "$ret" ]
@@ -36,7 +36,7 @@ then
         SCTKPATH=$ret
     fi
 
-    if [[ ! -d $SCTKPATH ]]
+    if [ ! -d $SCTKPATH ]
     then
         CWD=`pwd`
         git clone https://github.com/usnistgov/SCTK.git $SCTKPATH
@@ -52,11 +52,19 @@ then
     fi
 fi
 
+if [! -f $SCTKPATH/bin/asclite]
+then
+    echo "asclite not found in $SCTKPATH/bin. It's likely that SCTK build failed. Check https://github.com/usnistgov/SCTK for details."
+    exit 1
+fi
+
+
+
 ##
 ## Installing PyKaldi2
 ##
 
-if [[ ! -d $PYKALDIPATH ]]
+if [ ! -d $PYKALDIPATH ]
 then
     read -p "Installing PyKaldi2 in $PYKALDIPATH. Hit Enter or type an alternative install path name: " ret
     if [ ! -z "$ret" ]
@@ -64,7 +72,7 @@ then
         PYKALDIPATH=$ret
     fi
 
-    if [[ ! -d $PYKALDIPATH ]]
+    if [ ! -d $PYKALDIPATH ]
     then
         CWD=`pwd`
         git clone https://github.com/jzlianglu/pykaldi2.git -b libcss $PYKALDIPATH
