@@ -52,7 +52,7 @@ then
     fi
 fi
 
-if [! -f $SCTKPATH/bin/asclite]
+if [ ! -f $SCTKPATH/bin/asclite ]
 then
     echo "asclite not found in $SCTKPATH/bin. It's likely that SCTK build failed. Check https://github.com/usnistgov/SCTK for details."
     exit 1
