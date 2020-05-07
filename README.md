@@ -26,7 +26,7 @@ The second command activates the newly created environment named libricss_releas
 
 
 ### Continuous input evaluation
-Alternatively, you may run each step separately, which would be useful when you don't want to use the default ASR system. 
+To perform continuous input evaluation, you may follow the steps below. 
 1. First, the data can be downloaded and preprocessed as follows. 
     ```
     cd dataprep
@@ -39,12 +39,14 @@ Alternatively, you may run each step separately, which would be useful when you 
     ./gen_asrinput_raw_continuous.sh
     cd ../..
     sh activate.sh
+    source path.sh
     source asr/script/asr_path.sh
     cd asr/exp
     . decode_raw_continuous.sh
     exit
     ```
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
+    If you want to use your own ASR system, you may skip this step. 
     
 3. Finally, the ASR results can be scored as follows. 
     ```
@@ -69,15 +71,15 @@ Alternatively, you may run each step separately, which would be useful when you 
 
 ### Utterance-wise evaluation
 
-1. First, download the AM and the pykaldi2 repository, this step should be done in installation step above
+We assume that you have already downloaded the AM and PyKaldi2 as described above. 
 
-2. Then activate the docker, by running:
+1. Activate the docker, by running:
     ```
     sudo sh activate.sh
     sh asr/script/asr_path.sh
     ```
 
-3. Then the decoding command can be generated, and perform decoding
+2. Then the decoding command can be generated, and perform decoding
     ```
     cd asr/script
     ./gen_asrinput_raw_utterance.sh
@@ -85,7 +87,7 @@ Alternatively, you may run each step separately, which would be useful when you 
     . decode_raw_utterance.sh
     ```
   
-4. Finally, collect the wer with following command
+3. Finally, collect the wer with following command
     ```
     cd ../scripts
     . run_wer_raw_utterance.sh
