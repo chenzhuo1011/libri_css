@@ -41,6 +41,7 @@ then
         CWD=`pwd`
         git clone https://github.com/usnistgov/SCTK.git $SCTKPATH
         cd $SCTKPATH
+        export CXXFLAGS="-std=c++11" 
         make config
         make all
         make check
