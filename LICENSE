@@ -20,10 +20,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+
+============================
+The original LibriSpeech corpus is distributed at http://www.openslr.org/12/
+under CC-BY 4.0. 
+
+
+
+============================
 This codebase includes pieces originally copied from py-webrtcvad (https://github.com/wiseman/py-webrtcvad), 
 which is distributed under the MIT license as follows: 
 
-============================
 The MIT License (MIT)
 
 Copyright (c) 2016 John Wiseman
