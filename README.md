@@ -90,8 +90,11 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     . run_wer_raw_utterance.sh
     ```
     And the result will be print, can be found exp/data/baseline/utterance/decoding_result
+    
+    '''
+    
   
-
+    '''
 
 ## Plan
 
@@ -119,6 +122,9 @@ The task is to trascribe each file and save the result in the CTM format as segm
 
 ### Task (utterance-wise evaluation)
 
-TO BE ADDED.
+The data stucture is the same as the continuous evaluation, organized by meeting, where each utterance in the meeting are pre-segmented with ground truth boundary information.
+
+The utterance-wise evaluation transcribe each utterance individually,as did in most speech separation/enhancement task, when multiple separation result are generated for one input mix utterance, the permutation with lowest wer will be picked as the final result 
+
 
 

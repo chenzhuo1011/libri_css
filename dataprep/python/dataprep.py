@@ -18,6 +18,7 @@ def main(args):
     os.makedirs(args.tgtpath, exist_ok=True)
 
     conditions = ('0L','0S','OV10','OV20','OV30','OV40')
+    all_lines=[]
     for cond in tqdm.tqdm(conditions):
         meeting = glob.glob(os.path.join(args.srcpath, cond, 'overlap*'))
         for meet in meeting:
@@ -33,6 +34,16 @@ def main(args):
             os.makedirs(tgt_data_path, exist_ok=True)
             save_wav(source_data_path, tgt_data_path, mics=args.mics)
 
+
+            # summerize transcription
+            with open(os.path.join(meet,'transcription','utterance_transcription.txt'),'r') as f:
+                for line in f.readlines():
+                    utterances_id,trans=line.rstrip().split('\t')
+                    all_lines.append(meeting_name+'_'+utterances_id[:-4]+'\t'+trans)
+    
+    with open(os.path.join(args.tgtpath, 'utterance_transcription.txt'),'w') as f:
+        for item in all_lines:
+            f.write(item+'\n')
 
 def make_argparse():
     parser = argparse.ArgumentParser(description='Reorganize LibriCSS data.')

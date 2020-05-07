@@ -160,14 +160,24 @@ def main(args):
 	base_dir=args.data_path
 	decode_dir=args.decode_path
 
-	meeting_list=glob.glob(os.path.join(base_dir,'*','overlap_ratio*'))
+	meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
+
+	# print(os.path.join(base_dir,'monaural','overlap_ratio*'))
+
 	meeting_list=[os.path.basename(x) for x in meeting_list]
+
+
+
+	# print(meeting_list)
 
 	kwd=['overlap_ratio_0.0_sil0.1_0.5','overlap_ratio_0.0_sil2.9_3.0','overlap_ratio_10.0_sil0.1_1.0',
 	 'overlap_ratio_20.0_sil0.1_1.0','overlap_ratio_30.0_sil0.1_1.0','overlap_ratio_40.0_sil0.1_1.0']
 	condition=['0S','0L','OV10','OV20','OV30','OV40']
 
 	all_cond_res=load_result_files(decode_dir,meeting_list)
+
+	# print(all_cond_res)
+
 	tgt_cond=pick_setup(all_cond_res,args.development_session,setup=args.experiment_setup)
 	all_res=get_all_res(all_cond_res,tgt_cond,kwd,setup=args.experiment_setup)
 	

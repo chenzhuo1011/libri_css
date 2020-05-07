@@ -28,23 +28,7 @@ def main(args):
 	os.makedirs(decoding_cmd,exist_ok=True)
 	os.makedirs(decoding_result,exist_ok=True)
 
-	all_lines=[]
-	condition=['0L','0S','OV10','OV20','OV30','OV40']
-
-	for cond in condition:
-		all_trans=glob.glob(os.path.join(base_dir,cond,'*'))
-		for meeting in all_trans:
-			meeting_id=os.path.basename(meeting)
-
-			with open(os.path.join(base_dir,cond,meeting_id,'transcription','utterance_transcription.txt'),'r') as f:
-				for line in f.readlines():
-					utterances_id,trans=line.rstrip().split('\t')
-					all_lines.append(meeting_id+'_'+utterances_id[:-4]+'\t'+trans)
-				
-	with open(os.path.join(decoding_cmd,'all_transcription.scp'),'w') as f:
-		for item in all_lines:
-			f.write(item+'\n')
-
+	transcription_file=os.path.join(base_dir, 'monaural','utterance_transcription.txt')
 
 	zip_file=zip_dir+'/'+'utterances.zip'
 	zipf = zipfile.ZipFile(zip_file, 'w')
@@ -63,7 +47,7 @@ def main(args):
 	os.makedirs(os.path.join('..','exp'),exist_ok=True)
 
 	with open(os.path.join('..','exp','decode_raw_utterance.sh'),'w') as f:
-		cmd='sh '+ tool_path +'/run_asr_utterance.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+os.path.join(decoding_cmd,'all_transcription.scp')+' '+asr_path
+		cmd='sh '+ tool_path +'/run_asr_utterance.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+transcription_file+' '+asr_path
 		f.write(cmd+'\n')
 
 
