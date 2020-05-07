@@ -31,19 +31,17 @@ To perform continuous input evaluation, you may follow the steps below.
     ```
     cd dataprep
     ./scripts/dataprep.sh
-    cd ..
     ```
 2. Then, ASR can be run as 
     ```
-    cd asr/script
-    ./gen_asrinput_raw_continuous.sh
-    cd ../..
+    cd ..
     sh activate.sh
     source path.sh
-    source asr/script/asr_path.sh
-    cd asr/exp
+    source asr/scripts/asr_path.sh
+    cd asr/script
+    ./gen_asrinput_raw_continuous.sh
+    cd ../exp
     . decode_raw_continuous.sh
-    exit
     ```
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
     If you want to use your own ASR system, you may skip this step. 
@@ -51,22 +49,21 @@ To perform continuous input evaluation, you may follow the steps below.
 3. Finally, the ASR results can be scored as follows. 
     ```
     cd scoring
-    ./scripts/eval_continuous.sh ../exp/data/baseline/segments/decoding_result.sort/13_0.0
-    python ./python/report.py --inputdir ../exp/data/baseline/segments/decoding_result.sort/13_0.0
-    cd ..
+    ./scripts/eval_continuous.sh ../sample
+    python ./python/report.py --inputdir ../sample
     ```  
-    If you have skipped step 2, you may use the sample CTM files provided under "sample" directory instead. 
-    The last Python script, scoring/python/report.py, will print out WERs as follows, which correspond to the "no separation results" of Table 2 in [2].
+    This performs evaluation for the sample CTM files provided under "sample" directory, which correspond to the "no separation" results of Table 2 in [2].
+    The last Python script, scoring/python/report.py, will print out the results as follows. 
     ```  
     Result Summary
     --------------
     Condition: %WER
-    0S       : 15.4
-    0L       : 11.4
-    10       : 21.7
-    20       : 27.2
-    30       : 34.3
-    40       : 40.4
+    0S       : 15.5
+    0L       : 11.5
+    10       : 21.9
+    20       : 27.1
+    30       : 34.7
+    40       : 40.8
     ```  
 
 ### Utterance-wise evaluation
@@ -76,7 +73,8 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
 1. Activate the docker, by running:
     ```
     sudo sh activate.sh
-    sh asr/script/asr_path.sh
+    source path.sh
+    source asr/scripts/asr_path.sh
     ```
 
 2. Then the decoding command can be generated, and perform decoding
@@ -96,6 +94,12 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     
     '''
     
+    0S: 0.11458333333333333
+    0L: 0.11254386680812863
+    OV10: 0.1828377230246389
+    OV20: 0.2641803896243677
+    OV30: 0.34600058314705023
+    OV40: 0.43238971784502395
   
     '''
 
