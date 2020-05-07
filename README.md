@@ -103,14 +103,14 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     ```
     And the result will be print, can be found exp/data/baseline/utterance/decoding_result
     
-    '''
+    ```
     0S       : 0.11458333333333333
     0L       : 0.11254386680812863
     OV10       : 0.1828377230246389
     OV20       : 0.2641803896243677
     OV30       : 0.34600058314705023
     OV40       : 0.43238971784502395
-    '''
+    ```
 
 ## Plan
 
