@@ -54,7 +54,7 @@ fi
 
 if [ ! -f $SCTKPATH/bin/asclite ]
 then
-    echo "asclite not found in $SCTKPATH/bin. It's likely that SCTK build failed. Check https://github.com/usnistgov/SCTK for details."
+    echo "asclite not found in $SCTKPATH/bin. It's likely that SCTK build failed. Check https://github.com/usnistgov/SCTK for further help."
     exit 1
 fi
 
@@ -99,6 +99,7 @@ echo "export PYKALDIPATH=$PYKALDIPATH" >> path.sh
 echo "export AMPATH=$PYKALDIPATH/AM" >> path.sh
 
 EXPROOT=`dirname $0`/exp
+mkdir -p $EXPROOT
 EXPROOT=`realpath $EXPROOT`
 echo "export EXPROOT=$EXPROOT" >> path.sh
 
