@@ -139,15 +139,8 @@ The task is to trascribe each file and save the result in the CTM format as segm
 
 ### Task (utterance-wise evaluation)
 
-<<<<<<< HEAD
 The data stucture is the same as the continuous evaluation, organized by mini session, where each utterance in the mini session is pre-segmented with ground truth boundary information.
 
 The utterance-wise evaluation transcribes each utterance individually. As with many existing speech separation/enhancement tasks, when multiple separation results are generated for one input utterance mixture, the transcription result with the lowest WER is picked as the final result.
-=======
-The data stucture is the same as the continuous evaluation, organized by mini session, where each utterance in the mini session are pre-segmented with ground truth boundary information.
-
-The utterance-wise evaluation transcribe each utterance individually,as did in most speech separation/enhancement task, when multiple separation result are generated for one input mix utterance, the permutation with lowest wer will be picked as the final result.
->>>>>>> origin/master
-
 
 
