@@ -7,7 +7,7 @@ Continuous speech separation (CSS) is an approach to handling overlapped speech 
 
 ## Requirements
 
-We use SCTK (https://github.com/usnistgov/SCTK), the NIST Scoring Toolkit, for evaluation and PyKaldi2 (https://github.com/jzlianglu/pykaldi2), a Python internface to Kaldi for ASR. They can be installed as follows. Note that you need to have Docker enabled on your machine as required by PyKaldi2. 
+We use SCTK (https://github.com/usnistgov/SCTK), the NIST Scoring Toolkit, for evaluation and PyKaldi2 (https://github.com/jzlianglu/pykaldi2), a Python internface to Kaldi for ASR. They can be installed as follows. Note that you need to have Docker enabled on your machine as it is required by PyKaldi2. 
 ```
 ./install.sh
 source ./path.sh
@@ -33,20 +33,21 @@ To perform continuous input evaluation, you may follow the steps below.
     ./scripts/dataprep.sh
     cd ..
     ```
-2. Then, ASR can be run as 
+2. Then, ASR can be run by taking the following steps. 
     ```
     cd asr/script
-    ./gen_asrinput_raw_continuous.sh
-    sh activate.sh
+    ./gen_asrinput_raw_continuous.sh  # performing VAD
+    cd ../..
+    sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
-    cd ../exp
-    . decode_raw_continuous.sh
+    cd asr/exp
+    . decode_raw_continuous.sh  # running ASR
+    cd ../..
     ```
-    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
-    If you want to use your own ASR system, you may skip this step. 
+    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sort. If you want to use your own ASR system, you may skip this step. 
     
-    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root access
+    Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment by Ctrl-d, as by default files generated within the Docker environment are owned by root. 
     ```
     chmod -R 777 $EXPROOT
     ```
@@ -57,7 +58,7 @@ To perform continuous input evaluation, you may follow the steps below.
     ./scripts/eval_continuous.sh ../exp/data/baseline/segments/decoding_result.sort/13_0.0
     python ./python/report.py --inputdir ../exp/data/baseline/segments/decoding_result.sort/13_0.0
     ```  
-    The last Python script, scoring/python/report.py, will print out the results as follows. 
+    The Python script scoring/python/report.py will print out the results as follows. 
     ```  
     Result Summary
     --------------
@@ -69,20 +70,21 @@ To perform continuous input evaluation, you may follow the steps below.
     30       : 34.3
     40       : 40.4    
     ```  
-    This corresponds to the "no separation" results of Table 2 in [2]. If you have skipped step 2, you may use the sample CTM files provided under "sample" directory. 
+    This corresponds to the "no separation" results of Table 2 in [2]. If you have skipped step 2, you may use the sample CTM files provided under "sample" directory to see how the scoring script works. 
+
 
 ### Utterance-wise evaluation
 
 We assume that you have already downloaded the AM and PyKaldi2 as described above. 
 
-1. Activate the docker, by running:
+1. Activate the PyKaldi2 Docker environment by running:
     ```
-    sudo sh activate.sh
+    sh activate.sh
     source path.sh
     source asr/scripts/asr_path.sh
     ```
 
-2. Then the decoding command can be generated, and perform decoding
+2. Then, the decoding command can be generated, and perform decoding as follows. 
     ```
     cd asr/script
     ./gen_asrinput_raw_utterance.sh
@@ -91,18 +93,17 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     
     ```
   
-    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root acess
+    Also you might want to change the permission of the intermediate files before you exit the Docker environment by Ctrl-d, as by default the files generated within the Docker environment are owned by root. 
     ```
     chmod -R 777 $EXPROOT
     ```
   
-3. Finally, collect the wer with following command
+3. Finally, collect the WERs with following command: 
     ```
     cd ../scripts
     . run_wer_raw_utterance.sh
     ```
-    And the result will be print, can be found exp/data/baseline/utterance/decoding_result
-    
+    The result will be shown and can be found exp/data/baseline/utterance/decoding_result.    
     ```
     0S       : 0.11458333333333333
     0L       : 0.11254386680812863
@@ -138,9 +139,9 @@ The task is to trascribe each file and save the result in the CTM format as segm
 
 ### Task (utterance-wise evaluation)
 
-The data stucture is the same as the continuous evaluation, organized by meeting, where each utterance in the meeting are pre-segmented with ground truth boundary information.
+The data stucture is the same as the continuous evaluation, organized by mini session, where each utterance in the mini session is pre-segmented with ground truth boundary information.
 
-The utterance-wise evaluation transcribe each utterance individually,as did in most speech separation/enhancement task, when multiple separation result are generated for one input mix utterance, the permutation with lowest wer will be picked as the final result 
+The utterance-wise evaluation transcribes each utterance individually. As with many existing speech separation/enhancement tasks, when multiple separation results are generated for one input utterance mixture, the transcription result with the lowest WER is picked as the final result.
 
 
 
