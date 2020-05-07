@@ -46,6 +46,11 @@ To perform continuous input evaluation, you may follow the steps below.
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
     If you want to use your own ASR system, you may skip this step. 
     
+    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root acess
+    ```
+    chmod -R 777 $EXPROOT
+    ```
+    
 3. Finally, the ASR results can be scored as follows. 
     ```
     cd scoring
@@ -83,6 +88,12 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     ./gen_asrinput_raw_utterance.sh
     cd ../exp
     . decode_raw_utterance.sh
+    
+    ```
+  
+    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root acess
+    ```
+    chmod -R 777 $EXPROOT
     ```
   
 3. Finally, collect the wer with following command
