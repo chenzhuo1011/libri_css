@@ -31,22 +31,22 @@ To perform continuous input evaluation, you may follow the steps below.
     ```
     cd dataprep
     ./scripts/dataprep.sh
+    cd ..
     ```
 2. Then, ASR can be run as 
     ```
-    cd ..
+    cd asr/script
+    ./gen_asrinput_raw_continuous.sh
     sh activate.sh
     source path.sh
     source asr/scripts/asr_path.sh
-    cd asr/script
-    ./gen_asrinput_raw_continuous.sh
     cd ../exp
     . decode_raw_continuous.sh
     ```
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result
     If you want to use your own ASR system, you may skip this step. 
     
-    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root acess
+    Also you might want to change the permission of intermediate files before you exit the docker by Ctrl-d, as by default the files generated in docker have root access
     ```
     chmod -R 777 $EXPROOT
     ```
@@ -54,22 +54,22 @@ To perform continuous input evaluation, you may follow the steps below.
 3. Finally, the ASR results can be scored as follows. 
     ```
     cd scoring
-    ./scripts/eval_continuous.sh ../sample
-    python ./python/report.py --inputdir ../sample
+    ./scripts/eval_continuous.sh ../exp/data/baseline/segments/decoding_result.sort/13_0.0
+    python ./python/report.py --inputdir ../exp/data/baseline/segments/decoding_result.sort/13_0.0
     ```  
-    This performs evaluation for the sample CTM files provided under "sample" directory, which correspond to the "no separation" results of Table 2 in [2].
     The last Python script, scoring/python/report.py, will print out the results as follows. 
     ```  
     Result Summary
     --------------
     Condition: %WER
-    0S       : 15.5
-    0L       : 11.5
-    10       : 21.9
-    20       : 27.1
-    30       : 34.7
-    40       : 40.8
+    0S       : 15.4
+    0L       : 11.4
+    10       : 21.7
+    20       : 27.2
+    30       : 34.3
+    40       : 40.4    
     ```  
+    This corresponds to the "no separation" results of Table 2 in [2]. If you have skipped step 2, you may use the sample CTM files provided under "sample" directory. 
 
 ### Utterance-wise evaluation
 
