@@ -109,6 +109,13 @@ def main(args):
     with open(os.path.join('..','exp','decode_raw_continuous.sh'),'w') as f:
         cmd = 'sh '+ args.tool_path +'/run_asr_continuous.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . ' +asr_path
         f.write(cmd+'\n')
+        cmd = 'python ' + args.tool_path + '/../python/sortctm.py --inputdir {} --outputdir {}' .format(decoding_result, decoding_result + '.sort')
+        f.write(cmd+'\n')
+        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result) 
+        f.write(cmd+'\n')
+        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result + '.sort') 
+        f.write(cmd+'\n')
+
 
 
 def make_argparse():
