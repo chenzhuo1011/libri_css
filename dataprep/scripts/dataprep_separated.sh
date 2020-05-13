@@ -23,9 +23,9 @@ then
     cd $expdata_separated
 
     # wget
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1rSLO-gFdvO9Pur3BdGY2xxc6QM1iPzql' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1rSLO-gFdvO9Pur3BdGY2xxc6QM1iPzql" -O utterance_separation.zip && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1iZeitPWFC6uMeeseyXMVPCx2IFNaxlv3' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1iZeitPWFC6uMeeseyXMVPCx2IFNaxlv3" -O continuous_separation.zip && rm -rf /tmp/cookies.txt
 
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1x3ok8AFTzNhmzGALKgjeLQtaC9sV8v1J' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1x3ok8AFTzNhmzGALKgjeLQtaC9sV8v1J" -O continuous_separation.zip && rm -rf /tmp/cookies.txt
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1px67memfWq5RwnK_r0-ohFW5SupWmuv-' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1px67memfWq5RwnK_r0-ohFW5SupWmuv-" -O utterance_separation.zip && rm -rf /tmp/cookies.txt
 
     # unzip
     unzip utterance_separation.zip
