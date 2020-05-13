@@ -145,11 +145,11 @@ import argparse
 def make_argparse():
 	parser = argparse.ArgumentParser(description='Generate ASR input files')
 
-	parser.add_argument('--data_path', default='/data/zhuc/libricss/for_release', type=str, required=False)
-	parser.add_argument('--decode_path', default='/data/zhuc/libricss/for_release/baseline/utterance/decoding_result/utterances/LM_fglarge', type=str, required=False)
+	parser.add_argument('--data_path', default='', type=str, required=False)
+	parser.add_argument('--decode_path', default='', type=str, required=False)
 	parser.add_argument('--development_session', default='session0', type=str, required=False)
 	parser.add_argument('--experiment_setup', default='raw', type=str, required=False)
-	parser.add_argument('--result_path', default='/data/zhuc/libricss/for_release/baseline/utterance/decoding_result', type=str, required=False)
+	parser.add_argument('--result_path', default='', type=str, required=False)
 
 	return parser
 
@@ -160,15 +160,11 @@ def main(args):
 	base_dir=args.data_path
 	decode_dir=args.decode_path
 
-	meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
+	# meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
+	# meeting_list=[os.path.basename(x) for x in meeting_list]
 
-	# print(os.path.join(base_dir,'monaural','overlap_ratio*'))
-
-	meeting_list=[os.path.basename(x) for x in meeting_list]
-
-
-
-	# print(meeting_list)
+	with open(os.path.join(base_dir,'meeting_list.scp'),'r') as f:
+		meeting_list=[line.rstrip() for line in f.readlines()]
 
 	kwd=['overlap_ratio_0.0_sil0.1_0.5','overlap_ratio_0.0_sil2.9_3.0','overlap_ratio_10.0_sil0.1_1.0',
 	 'overlap_ratio_20.0_sil0.1_1.0','overlap_ratio_30.0_sil0.1_1.0','overlap_ratio_40.0_sil0.1_1.0']
