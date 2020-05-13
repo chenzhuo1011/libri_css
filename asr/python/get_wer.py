@@ -4,6 +4,7 @@ import numpy as np
 def load_result_files(res_folder,meeting_list):
 #     t1=glob.glob(r'\\ccpsofsep\Scratch3\users\zhuc\OpenCSS\res\mc_less_noise_no_stop_mvdr.tr960mmi\mc_less_noise_no_stop_mvdr.tr960mmi\mc_less_noise_no_stop_mvdr\LM_fglarge\result*')
 	t1=glob.glob(res_folder+'/result*')
+	
 #     print(t1)
 	all_res={}
 	for item in tqdm.tqdm(t1):
@@ -160,11 +161,13 @@ def main(args):
 	base_dir=args.data_path
 	decode_dir=args.decode_path
 
-	# meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
-	# meeting_list=[os.path.basename(x) for x in meeting_list]
+	# assert(1==0)
+	meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
+	meeting_list=[os.path.basename(x) for x in meeting_list]
 
-	with open(os.path.join(base_dir,'meeting_list.scp'),'r') as f:
-		meeting_list=[line.rstrip() for line in f.readlines()]
+	# print(meeting_list)
+	# with open(os.path.join(base_dir,'meeting_list.scp'),'r') as f:
+	# 	meeting_list=[line.rstrip() for line in f.readlines()]
 
 	kwd=['overlap_ratio_0.0_sil0.1_0.5','overlap_ratio_0.0_sil2.9_3.0','overlap_ratio_10.0_sil0.1_1.0',
 	 'overlap_ratio_20.0_sil0.1_1.0','overlap_ratio_30.0_sil0.1_1.0','overlap_ratio_40.0_sil0.1_1.0']

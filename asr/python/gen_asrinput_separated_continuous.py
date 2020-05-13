@@ -95,6 +95,8 @@ def main(args):
 	meeting_list=glob.glob(os.path.join(wav_dir,'overlap_ratio*'))
 	meeting_list=[os.path.basename(x) for x in meeting_list]
 
+	# print(meeting_list)
+
 	with open(os.path.join(decoding_cmd,'meeting_list.scp'),'w') as f:
 
 		for meeting in meeting_list:
