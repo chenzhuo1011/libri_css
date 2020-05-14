@@ -8,15 +8,14 @@ then
     exit 1
 fi
 
+source $pathscript
+
 expdata_separated=$EXPROOT/data/separation_result
 
-# https://drive.google.com/open?id=1rSLO-gFdvO9Pur3BdGY2xxc6QM1iPzql
-# https://drive.google.com/open?id=1x3ok8AFTzNhmzGALKgjeLQtaC9sV8v1J
-# Download and unzip the data. 
 
 if [ ! -d $expdata_separated ]
 then
-    echo "Downloading LibriCSS separation data."    
+    echo "Downloading LibriCSS example separation data."    
     CWD=`pwd`
     mkdir -p $expdata_separated
   
@@ -31,7 +30,5 @@ then
     unzip utterance_separation.zip
     unzip continuous_separation.zip
 
-    # segmentation
-    
     cd $CWD
 fi

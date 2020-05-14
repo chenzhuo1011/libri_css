@@ -8,6 +8,8 @@ then
     exit 1
 fi
 
+source $pathscript
+
 origdata=$EXPROOT/data-orig
 expdata=$EXPROOT/data
 
