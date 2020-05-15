@@ -166,9 +166,9 @@ def main(args):
 
 
 
-
-
 def make_argparse():
+    scoring_base = os.path.dirname(os.path.dirname(__file__))    
+
     parser = argparse.ArgumentParser(description='Score SR output with asclite.')
 
     # Set up an argument parser.
@@ -176,9 +176,9 @@ def make_argparse():
                         help='Directory where CTM files are retrieved.')
     parser.add_argument('--sctkpath', metavar='<path>', required=True, 
                         help='Path to asclite.')
-    parser.add_argument('--refdir', metavar='<dir>', default=r'./references',  
+    parser.add_argument('--refdir', metavar='<dir>', default=os.path.join(scoring_base, 'references'),  
                         help='Directory where STM files are retrieved.')
-    parser.add_argument('--glmfile', metavar='<file>', default=r'./en20040920.glm',
+    parser.add_argument('--glmfile', metavar='<file>', default=os.path.join(scoring_base, 'en20040920.glm'),
                         help='GLM file for text normalization.')    
     parser.add_argument('--ignore_overlap', action='store_true',
                         help='Score for only single-speaker segments.')
