@@ -6,7 +6,7 @@ curdir=`dirname $0`
 curdir=`realpath $curdir`
 
 # args
-prep_script=$curdir/../python/gen_asrinput_raw_continuous.py
+prep_script=$curdir/../python/gen_asrinput_continuous.py
 libricss_path=$EXPROOT/data
 script_path=$curdir/../scripts
 asr_path=$AMPATH

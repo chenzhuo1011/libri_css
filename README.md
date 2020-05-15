@@ -1,9 +1,10 @@
 # LibriCSS
-Continuous speech separation (CSS) is an approach to handling overlapped speech in conversational audio signals. Most previous speech separation algorithms were tested on artificially mixed pre-segmented speech signals and thus bypassed overlap detection and speaker counting by implicitly assuming overlapped regions to be already extracted from the input audio. CSS is an attempt to directly process the continuously incoming audio signals with online processing. The main concept was established and its effectiveness was evaluated on real meeting recordings in [1]. As these recordings were proprietary, a publicly available dataset, called LibriCSS, has been prepared by the same research group in [2]. This repository contains the programs for LibriCSS evaluation. 
+Continuous speech separation (CSS) is an approach to handling overlapped speech in conversational audio signals. Most previous speech separation algorithms were tested on artificially mixed pre-segmented speech signals and thus bypassed overlap detection and speaker counting by implicitly assuming overlapped regions to be already extracted from the input audio. CSS is an attempt to directly process the continuously incoming audio signals with online processing. The main concept was established and its effectiveness was evaluated on real meeting recordings in [1]. As these recordings were proprietary, a publicly available dataset, called LibriCSS, has been prepared by the same research group in [2]. This repository contains the programs for LibriCSS evaluation. The LibriCSS dataset can be used for evaluation offline algorithms. 
 
 [1] T. Yoshioka et al., "Advances in Online Audio-Visual Meeting Transcription," 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), SG, Singapore, 2019, pp. 276-283. 
 
 [2] Z. Chen et al., "Continuous speech separation: dataset and analysis," ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Barcelona, Spain, 2020, accepted for publication.
+
 
 ## Requirements
 
@@ -113,9 +114,56 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     OV40       : 0.43238971784502395
     ```
 
-## Plan
+## Example CSS Results
 
-The current repository generates only the baseline results without separation processing. For those of you focusing on front-end speech separation algorithms, we are planning to add example CSS output waveforms and ASR scripts using them. 
+The steps described above generates the baseline results without speech separation nor overlapped speech recognition. 
+We are also publicizing example output waveforms of the CSS algorithm as well as the scripts that perform ASR and WER scoring for these signals. 
+Those focusing on the front-end speech separation algorithms will be able to test their own algorithms by replacing the example waveforms by their own ones. 
+
+
+### Continuous input evaluation
+To perform continuous input evaluation, you may follow the steps below. 
+1. First, the example waveforms can be downloaded as follows. 
+    ```
+    cd dataprep
+    ./scripts/dataprep_separation.sh
+    cd ..
+    ```
+2. Then, ASR can be run by taking the following steps. 
+    ```
+    cd asr/script
+    ./gen_asrinput_separated_continuous.sh  # performing VAD
+    cd ../..
+    sh activate.sh  # activating PyKaldi2 Docker environment
+    source path.sh
+    source asr/scripts/asr_path.sh
+    cd exp/data/separation_baseline/decoding_cmd
+    . decode.sh  # running ASR
+    cd ../../../..
+    ```    
+    
+3. Finally, the ASR results can be scored as follows. 
+    ```
+    cd scoring
+    ./scoring/scripts/eval_continuous.sh exp/data/separation_baseline/decoding_result.sorted/13_0.0/
+    python scoring/python/report.py --inputdir exp/data/separation_baseline/decoding_result.sorted/13_0.0/
+    ```  
+    The Python script scoring/python/report.py will print out the results as follows. 
+    ```  
+    Result Summary
+    --------------
+    Condition: %WER
+    0S       : 11.9
+    0L       : 9.7
+    10       : 13.4
+    20       : 15.1
+    30       : 19.7
+    40       : 22.0    
+    ```  
+    This corresponds to the "7ch" results of Table 3 in [2]. 
+
+
+### Utterance-wise evaluation
 
 
 
