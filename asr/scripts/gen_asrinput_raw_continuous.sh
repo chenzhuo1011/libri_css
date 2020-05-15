@@ -2,12 +2,13 @@
 
 PYTHON=python
 
+curdir=`dirname $0`
+curdir=`realpath $curdir`
+
 # args
-prep_script=../python/gen_asrinput_raw_continuous.py
+prep_script=$curdir/../python/gen_asrinput_raw_continuous.py
 libricss_path=$EXPROOT/data
-script_path=../scripts
+script_path=$curdir/../scripts
 asr_path=$AMPATH
 
-echo "$prep_script --data_path $libricss_path --tool_path $script_path --asr_path $asr_path"
-
-$PYTHON $prep_script --data_path $libricss_path --tool_path $script_path --asr_path $asr_path
+$PYTHON $prep_script --input_path $libricss_path/monaural/segments --decode_path $libricss_path/baseline/segments --tool_path $script_path --am_path $asr_path

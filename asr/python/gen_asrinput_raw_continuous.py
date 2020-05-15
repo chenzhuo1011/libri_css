@@ -103,17 +103,22 @@ def main(args):
     # Create an ASR script. 
     with open(os.path.join(decoding_cmd, 'decode.sh'),'w') as f:
         cmd = 'sh {} {} {} . {}'.format(os.path.join(tool_path, 'run_asr_continuous.sh'), 
-                                   os.path.join(decoding_cmd, 'meeting_list.scp'), 
-                                   decoding_result, 
-                                   am_path)
+                                        os.path.join(decoding_cmd, 'meeting_list.scp'), 
+                                        decoding_result, 
+                                        am_path)
         f.write(cmd+'\n')
-        cmd = 'python {} --inputdir {} --outputdir {}'.format(os.path.normpath(os.path.join(tool_path, '../python/sortctm.py')), 
-                                                              decoding_result, 
-                                                              decoding_result + '.sorted')
+        if args.multi_stream:
+            cmd = 'python {} --with_channel --inputdir {} --outputdir {}'.format(os.path.normpath(os.path.join(tool_path, '../python/sortctm.py')), 
+                                                                decoding_result, 
+                                                                decoding_result + '.sorted')
+        else:
+            cmd = 'python {} --inputdir {} --outputdir {}'.format(os.path.normpath(os.path.join(tool_path, '../python/sortctm.py')), 
+                                                                decoding_result, 
+                                                                decoding_result + '.sorted')
         f.write(cmd+'\n')
         cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result) 
         f.write(cmd+'\n')
-        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result + '.sort') 
+        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result + '.sorted') 
         f.write(cmd+'\n')
 
 
@@ -133,6 +138,9 @@ def make_argparse():
                         help='Segmentation parameter.')
     parser.add_argument('--merge_margin', default=1, metavar='<float>', type=float, 
                         help='Segmentation parameter.')
+
+    parser.add_argument('--multi_stream', action='store_true', 
+                        help='Set this flag when processing CSS (or multi-stream) outputs.')
 
     return parser
 
