@@ -122,7 +122,7 @@ To perform continuous input evaluation, you may follow the steps below.
     ```
 2. Then, ASR can be run by taking the following steps. 
     ```
-    ./asr/script/gen_asrinput_separated_continuous.sh  # performing VAD
+    ./asr/scripts/gen_asrinput_separated_continuous.sh  # performing VAD
     sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
