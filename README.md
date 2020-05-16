@@ -39,7 +39,7 @@ To perform continuous input evaluation, you may follow the steps below.
     source path.sh
     source asr/scripts/asr_path.sh
     cd exp/data/baseline/segments/decoding_cmd
-    . decode.sh  # running ASR (If you want to specify the GPU to use, add export "CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
     ```
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sorted. If you want to use your own ASR system, you may skip this step. 
     
@@ -127,7 +127,7 @@ To perform continuous input evaluation, you may follow the steps below.
     source path.sh
     source asr/scripts/asr_path.sh
     cd exp/data/separation_baseline/decoding_cmd
-    . decode.sh  # running ASR (If you want to specify the GPU to use, add export "CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
     exit  # quitting the Docker environment
     ```    
     
