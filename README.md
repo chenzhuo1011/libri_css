@@ -30,23 +30,18 @@ The second command activates the newly created environment named libricss_releas
 To perform continuous input evaluation, you may follow the steps below. 
 1. First, the data can be downloaded and preprocessed as follows. 
     ```
-    cd dataprep
-    ./scripts/dataprep.sh
-    cd ..
+    ./dataprep/scripts/dataprep.sh
     ```
 2. Then, ASR can be run by taking the following steps. 
     ```
-    cd asr/script
-    ./gen_asrinput_raw_continuous.sh  # performing VAD
-    cd ../..
+    ./asr/scripts/gen_asrinput_raw_continuous.sh  # performing VAD
     sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
-    cd asr/exp
-    . decode_raw_continuous.sh  # running ASR
-    cd ../..
+    cd exp/data/baseline/segments/decoding_cmd
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add export "CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
     ```
-    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sort. If you want to use your own ASR system, you may skip this step. 
+    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sorted. If you want to use your own ASR system, you may skip this step. 
     
     Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment by Ctrl-d, as by default files generated within the Docker environment are owned by root. 
     ```
@@ -55,9 +50,8 @@ To perform continuous input evaluation, you may follow the steps below.
     
 3. Finally, the ASR results can be scored as follows. 
     ```
-    cd scoring
-    ./scripts/eval_continuous.sh ../exp/data/baseline/segments/decoding_result.sort/13_0.0
-    python ./python/report.py --inputdir ../exp/data/baseline/segments/decoding_result.sort/13_0.0
+    ./scoring/scripts/eval_continuous.sh exp/data/baseline/segments/decoding_result.sorted/13_0.0
+    python ./scoring/python/report.py --inputdir exp/data/baseline/segments/decoding_result.sorted/13_0.0
     ```  
     The Python script scoring/python/report.py will print out the results as follows. 
     ```  
@@ -138,13 +132,11 @@ To perform continuous input evaluation, you may follow the steps below.
     source path.sh
     source asr/scripts/asr_path.sh
     cd exp/data/separation_baseline/decoding_cmd
-    . decode.sh  # running ASR
-    cd ../../../..
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add export "CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
     ```    
     
 3. Finally, the ASR results can be scored as follows. 
     ```
-    cd scoring
     ./scoring/scripts/eval_continuous.sh exp/data/separation_baseline/decoding_result.sorted/13_0.0/
     python scoring/python/report.py --inputdir exp/data/separation_baseline/decoding_result.sorted/13_0.0/
     ```  
@@ -165,6 +157,7 @@ To perform continuous input evaluation, you may follow the steps below.
 
 ### Utterance-wise evaluation
 
+TBD.
 
 
 ## Some Details
