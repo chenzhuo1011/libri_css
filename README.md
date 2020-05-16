@@ -84,8 +84,7 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
     cd asr/script
     ./gen_asrinput_raw_utterance.sh
     cd ../exp
-    . decode_raw_utterance.sh
-    
+    . decode_raw_utterance.sh    
     ```
   
     Also you might want to change the permission of the intermediate files before you exit the Docker environment by Ctrl-d, as by default the files generated within the Docker environment are owned by root. 
@@ -110,8 +109,8 @@ We assume that you have already downloaded the AM and PyKaldi2 as described abov
 
 ## Example CSS Results
 
-The steps described above generates the baseline results without speech separation nor overlapped speech recognition. 
-We are also publicizing example output waveforms of the CSS algorithm as well as the scripts that perform ASR and WER scoring for these signals. 
+The steps described above generate the baseline results without speech separation nor overlapped speech recognition. 
+We are also publishing example output waveforms of the CSS algorithm as well as the scripts that perform ASR and WER scoring for these signals. 
 Those focusing on the front-end speech separation algorithms will be able to test their own algorithms by replacing the example waveforms by their own ones. 
 
 
@@ -119,20 +118,17 @@ Those focusing on the front-end speech separation algorithms will be able to tes
 To perform continuous input evaluation, you may follow the steps below. 
 1. First, the example waveforms can be downloaded as follows. 
     ```
-    cd dataprep
-    ./scripts/dataprep_separation.sh
-    cd ..
+    ./dataprep/scripts/dataprep_separation.sh
     ```
 2. Then, ASR can be run by taking the following steps. 
     ```
-    cd asr/script
-    ./gen_asrinput_separated_continuous.sh  # performing VAD
-    cd ../..
+    ./asr/script/gen_asrinput_separated_continuous.sh  # performing VAD
     sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
     cd exp/data/separation_baseline/decoding_cmd
     . decode.sh  # running ASR (If you want to specify the GPU to use, add export "CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+    exit  # quitting the Docker environment
     ```    
     
 3. Finally, the ASR results can be scored as follows. 
