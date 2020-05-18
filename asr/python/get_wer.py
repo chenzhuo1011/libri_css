@@ -11,6 +11,7 @@ def load_result_files(res_folder,meeting_list):
 		cond='_'.join(os.path.basename(item).split('_')[-2:])
 		with open(item,'r') as f:
 			lines=[line.rstrip() for line in f.readlines()]
+		
 		res_lines=[]
 		for ite in lines:
 			if 'err:' in ite and 'ref_len:' in ite:
@@ -22,15 +23,19 @@ def load_result_files(res_folder,meeting_list):
 	
 	for cond in all_cond:
 		this_res=all_res[cond]
+		# print(this_res)
 		this_cond={}
 		for item in meeting_list:
 			this_meet=[]
 			for ite in this_res:
+				# print(ite)
+				# print(item)
 				if ite[:len(item)]==item:
 					this_meet.append(ite)
 			this_cond[item]=this_meet
 		all_cond_res[cond]=this_cond    
 		
+		# assert(1==0)
 	return all_cond_res
 
 def get_this_meet_res(this_meet,meet_id):
@@ -146,7 +151,7 @@ import argparse
 def make_argparse():
 	parser = argparse.ArgumentParser(description='Generate ASR input files')
 
-	parser.add_argument('--data_path', default='', type=str, required=False)
+	parser.add_argument('--meeting_list', default='', type=str, required=False)
 	parser.add_argument('--decode_path', default='', type=str, required=False)
 	parser.add_argument('--development_session', default='session0', type=str, required=False)
 	parser.add_argument('--experiment_setup', default='raw', type=str, required=False)
@@ -154,21 +159,19 @@ def make_argparse():
 
 	return parser
 
-
-
 def main(args):
 
-	base_dir=args.data_path
 	decode_dir=args.decode_path
 
 	# assert(1==0)
-	meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
-	meeting_list=[os.path.basename(x) for x in meeting_list]
+	# meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
+	# meeting_list=[os.path.basename(x) for x in meeting_list]
+	# print(meeting_list)
+	
+	with open(args.meeting_list,'r') as f:
+		meeting_list=[line.rstrip() for line in f.readlines()]
 
 	# print(meeting_list)
-	# with open(os.path.join(base_dir,'meeting_list.scp'),'r') as f:
-	# 	meeting_list=[line.rstrip() for line in f.readlines()]
-
 	kwd=['overlap_ratio_0.0_sil0.1_0.5','overlap_ratio_0.0_sil2.9_3.0','overlap_ratio_10.0_sil0.1_1.0',
 	 'overlap_ratio_20.0_sil0.1_1.0','overlap_ratio_30.0_sil0.1_1.0','overlap_ratio_40.0_sil0.1_1.0']
 	condition=['0S','0L','OV10','OV20','OV30','OV40']
@@ -180,7 +183,7 @@ def main(args):
 	tgt_cond=pick_setup(all_cond_res,args.development_session,setup=args.experiment_setup)
 	all_res=get_all_res(all_cond_res,tgt_cond,kwd,setup=args.experiment_setup)
 	
-	with open(args.result_path+'/'+args.experiment_setup+'_wer.txt','w') as f:
+	with open(os.path.join(args.result_path,args.experiment_setup+'_wer.txt'),'w') as f:
 		for i in range(len(condition)):
 			f.write(condition[i]+': '+ str(all_res[i])+'\n')
 			print(condition[i]+': '+ str(all_res[i]))

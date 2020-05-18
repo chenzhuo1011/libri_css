@@ -43,7 +43,6 @@ class segmentor():
         return
 
 
-
 def get_zip(zip_dir,meeting,result_dir):
     os.makedirs(zip_dir,exist_ok=True)
     zipf = zipfile.ZipFile(zip_dir+'/'+meeting+'.zip', 'w')
@@ -58,11 +57,11 @@ def get_zip(zip_dir,meeting,result_dir):
 
 
 # Extract the first channel audio. 
-def save_single_channel_wav(source_path, tgt_path):
-    for item in glob.glob(source_path+'/*.wav'):
-        s, f = sf.read(item)
-        fname = os.path.basename(item)
-        sf.write(tgt_path + '/' + fname, s[:, 0], f)
+# def save_single_channel_wav(source_path, tgt_path):
+#     for item in glob.glob(source_path+'/*.wav'):
+#         s, f = sf.read(item)
+#         fname = os.path.basename(item)
+#         sf.write(tgt_path + '/' + fname, s[:, 0], f)
 
 
 
@@ -83,7 +82,7 @@ def main(args):
     os.makedirs(decoding_result, exist_ok=True)
 
     # In this baseline script, we create single channel audio files. the single channel data has been step 
-    with open(decoding_cmd + '/meeting_list.scp', 'w') as f:
+    with open(decoding_cmd + '/zip_list.scp', 'w') as f:
         meeting = glob.glob(os.path.join(args.input_path, 'overlap*'))
         print(args.input_path)
         for meet in meeting:
@@ -103,7 +102,7 @@ def main(args):
     # Create an ASR script. 
     with open(os.path.join(decoding_cmd, 'decode.sh'),'w') as f:
         cmd = 'sh {} {} {} . {}'.format(os.path.join(tool_path, 'run_asr_continuous.sh'), 
-                                        os.path.join(decoding_cmd, 'meeting_list.scp'), 
+                                        os.path.join(decoding_cmd, 'zip_list.scp'), 
                                         decoding_result, 
                                         am_path)
         f.write(cmd+'\n')

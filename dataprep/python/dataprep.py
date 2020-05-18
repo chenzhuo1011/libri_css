@@ -41,7 +41,7 @@ def main(args):
                     utterances_id,trans=line.rstrip().split('\t')
                     all_lines.append(meeting_name+'_'+utterances_id[:-4]+'\t'+trans)
     
-    with open(os.path.join(args.tgtpath, 'utterance_transcription.txt'),'w') as f:
+    with open(os.path.join(args.tgtpath, 'utterances','utterance_transcription.txt'),'w') as f:
         for item in all_lines:
             f.write(item+'\n')
 
