@@ -172,7 +172,9 @@ def main(args):
 	with open(os.path.join(args.result_path,args.experiment_setup+'_wer.txt'),'w') as f:
 		for i in range(len(condition)):
 			f.write(condition[i]+': '+ str(all_res[i])+'\n')
-			print(condition[i]+': '+ str(all_res[i]))
+			print('{:9}: {:.1f}'.format(condition[i], all_res[i]*100))
+
+			# print(condition[i]+': '+ str(all_res[i]))
 
 
 if __name__ == '__main__':
