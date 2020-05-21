@@ -2,10 +2,8 @@ import glob,os,tqdm
 import numpy as np
 
 def load_result_files(res_folder,meeting_list):
-#     t1=glob.glob(r'\\ccpsofsep\Scratch3\users\zhuc\OpenCSS\res\mc_less_noise_no_stop_mvdr.tr960mmi\mc_less_noise_no_stop_mvdr.tr960mmi\mc_less_noise_no_stop_mvdr\LM_fglarge\result*')
 	t1=glob.glob(res_folder+'/result*')
-	
-#     print(t1)
+
 	all_res={}
 	for item in tqdm.tqdm(t1):
 		cond='_'.join(os.path.basename(item).split('_')[-2:])
@@ -23,19 +21,17 @@ def load_result_files(res_folder,meeting_list):
 	
 	for cond in all_cond:
 		this_res=all_res[cond]
-		# print(this_res)
+
 		this_cond={}
 		for item in meeting_list:
 			this_meet=[]
 			for ite in this_res:
-				# print(ite)
-				# print(item)
+
 				if ite[:len(item)]==item:
 					this_meet.append(ite)
 			this_cond[item]=this_meet
 		all_cond_res[cond]=this_cond    
-		
-		# assert(1==0)
+
 	return all_cond_res
 
 def get_this_meet_res(this_meet,meet_id):
@@ -77,7 +73,7 @@ def get_this_meet_res(this_meet,meet_id):
 	return ERR,REF
 
 def get_this_meet_res_raw(this_meet,meet_id):
-#     assert(len(this_meet)%2==0)
+
 	nseg=len(this_meet)
 	
 	ERR=[]
@@ -92,7 +88,6 @@ def get_this_meet_res_raw(this_meet,meet_id):
 
 def find_line(this_meet,utt):
 	for ite in this_meet:
-#         print(ite[:len(utt)],utt)
 		if ite[:len(utt)]==utt:
 			t1=ite.split(' ')
 			err=int(t1[2])
@@ -122,9 +117,7 @@ def pick_setup(all_cond_res,session_id,setup='separated'):
 
 def get_all_res(all_cond_res,tgt_cond,kwd,setup='separated'):
 	
-# 14_1.0 is the best
-# tgt_cond='14_0.0'
-# then get all result 
+
 	this_cond=all_cond_res[tgt_cond]
 	all_key=list(this_cond.keys())
 
@@ -163,22 +156,15 @@ def main(args):
 
 	decode_dir=args.decode_path
 
-	# assert(1==0)
-	# meeting_list=glob.glob(os.path.join(base_dir,'monaural','utterances','overlap_ratio*'))
-	# meeting_list=[os.path.basename(x) for x in meeting_list]
-	# print(meeting_list)
-	
+
 	with open(args.meeting_list,'r') as f:
 		meeting_list=[line.rstrip() for line in f.readlines()]
 
-	# print(meeting_list)
 	kwd=['overlap_ratio_0.0_sil0.1_0.5','overlap_ratio_0.0_sil2.9_3.0','overlap_ratio_10.0_sil0.1_1.0',
 	 'overlap_ratio_20.0_sil0.1_1.0','overlap_ratio_30.0_sil0.1_1.0','overlap_ratio_40.0_sil0.1_1.0']
 	condition=['0S','0L','OV10','OV20','OV30','OV40']
 
 	all_cond_res=load_result_files(decode_dir,meeting_list)
-
-	# print(all_cond_res)
 
 	tgt_cond=pick_setup(all_cond_res,args.development_session,setup=args.experiment_setup)
 	all_res=get_all_res(all_cond_res,tgt_cond,kwd,setup=args.experiment_setup)

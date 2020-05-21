@@ -77,20 +77,9 @@ def main(args):
 	
 		f.write(cmd+'\n')
 
-	# Create an ASR script. 
-
-	# with open(os.path.join('..','exp','decode_raw_utterance.sh'),'w') as f:
-	# 	cmd='sh '+ tool_path +'/run_asr_utterance.sh ' + decoding_cmd+'/meeting_list.scp '+decoding_result+' '+transcription_file+' '+asr_path
-	# 	f.write(cmd+'\n')
-
-
-
 
 def make_argparse():
 	parser = argparse.ArgumentParser(description='Generate ASR input files')
-	# parser.add_argument('--data_path', required=True)
-	# parser.add_argument('--tool_path', required=True)
-	# parser.add_argument('--asr_path', required=True)
 
 	parser.add_argument('--input_path', metavar='<path>', required=True, 
 						help='Directory where input audio files are retrieved.')
@@ -103,12 +92,6 @@ def make_argparse():
 	
 
 	return parser
-	# parser = argparse.ArgumentParser()
-	# parser.add_argument('-base_path', default='/data/zhuc/libricss/for_release/', type=str, required=False)
-	# parser.add_argument('-tool_path', default='/data/zhuc/libricss/opencss/pykaldi2/example/OpenCSS', type=str, required=False)
-	# args = parser.parse_args()
-
-
 
 if __name__ == '__main__':
 	parser = make_argparse()

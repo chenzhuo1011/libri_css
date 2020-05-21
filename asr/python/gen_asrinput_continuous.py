@@ -56,14 +56,6 @@ def get_zip(zip_dir,meeting,result_dir):
     return zip_dir+'/'+meeting+'.zip'
 
 
-# Extract the first channel audio. 
-# def save_single_channel_wav(source_path, tgt_path):
-#     for item in glob.glob(source_path+'/*.wav'):
-#         s, f = sf.read(item)
-#         fname = os.path.basename(item)
-#         sf.write(tgt_path + '/' + fname, s[:, 0], f)
-
-
 
 def main(args):
     tool_path = os.path.normpath(args.tool_path)
