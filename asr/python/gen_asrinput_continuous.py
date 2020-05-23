@@ -43,7 +43,6 @@ class segmentor():
         return
 
 
-
 def get_zip(zip_dir,meeting,result_dir):
     os.makedirs(zip_dir,exist_ok=True)
     zipf = zipfile.ZipFile(zip_dir+'/'+meeting+'.zip', 'w')
@@ -57,38 +56,27 @@ def get_zip(zip_dir,meeting,result_dir):
     return zip_dir+'/'+meeting+'.zip'
 
 
-# Extract the first channel audio. 
-def save_single_channel_wav(source_path, tgt_path):
-    for item in glob.glob(source_path+'/*.wav'):
-        s, f = sf.read(item)
-        fname = os.path.basename(item)
-        sf.write(tgt_path + '/' + fname, s[:, 0], f)
-
-
 
 def main(args):
-    data_path = args.data_path
-    asr_path=args.asr_path
-    # We wenerate ASR input data under the original data directory. 
-    baseline_dir_seg = os.path.join(data_path, 'baseline', 'segments')
-    single_channel_dir =  os.path.join(data_path, 'monaural','segments')
-    
-    os.makedirs(baseline_dir_seg, exist_ok=True)
+    tool_path = os.path.normpath(args.tool_path)
+    am_path = os.path.normpath(args.am_path)
+    decode_path = os.path.normpath(args.decode_path)
 
     # Create some directories. 
-    result_dir = os.path.join(baseline_dir_seg, 'vad')
+    result_dir = os.path.join(decode_path, 'vad')
     zip_dir = os.path.join(result_dir, 'zip')
-    os.makedirs(zip_dir,exist_ok=True)
+    os.makedirs(zip_dir, exist_ok=True)
 
-    decoding_cmd = os.path.join(baseline_dir_seg, 'decoding_cmd')
+    decoding_cmd = os.path.join(decode_path, 'decoding_cmd')
     os.makedirs(decoding_cmd, exist_ok=True)
 
-    decoding_result = os.path.join(baseline_dir_seg, 'decoding_result')
+    decoding_result = os.path.join(decode_path, 'decoding_result')
     os.makedirs(decoding_result, exist_ok=True)
 
     # In this baseline script, we create single channel audio files. the single channel data has been step 
-    with open(decoding_cmd + '/meeting_list.scp', 'w') as f:
-        meeting = glob.glob(os.path.join(single_channel_dir,'overlap*'))
+    with open(decoding_cmd + '/zip_list.scp', 'w') as f:
+        meeting = glob.glob(os.path.join(args.input_path, 'overlap*'))
+        print(args.input_path)
         for meet in meeting:
             # Extract the first channel signals.            
             meeting_name = os.path.basename(meet)
@@ -104,16 +92,24 @@ def main(args):
             f.write(zip_file + '\n')
 
     # Create an ASR script. 
-    os.makedirs(os.path.join('..','exp'),exist_ok=True)
-
-    with open(os.path.join('..','exp','decode_raw_continuous.sh'),'w') as f:
-        cmd = 'sh '+ args.tool_path +'/run_asr_continuous.sh ' + decoding_cmd + '/meeting_list.scp ' + decoding_result + ' . ' +asr_path
+    with open(os.path.join(decoding_cmd, 'decode.sh'),'w') as f:
+        cmd = 'sh {} {} {} . {}'.format(os.path.join(tool_path, 'run_asr_continuous.sh'), 
+                                        os.path.join(decoding_cmd, 'zip_list.scp'), 
+                                        decoding_result, 
+                                        am_path)
         f.write(cmd+'\n')
-        cmd = 'python ' + args.tool_path + '/../python/sortctm.py --inputdir {} --outputdir {}' .format(decoding_result, decoding_result + '.sort')
+        if args.multi_stream:
+            cmd = 'python {} --with_channel --inputdir {} --outputdir {}'.format(os.path.normpath(os.path.join(tool_path, '../python/sortctm.py')), 
+                                                                decoding_result, 
+                                                                decoding_result + '.sorted')
+        else:
+            cmd = 'python {} --inputdir {} --outputdir {}'.format(os.path.normpath(os.path.join(tool_path, '../python/sortctm.py')), 
+                                                                decoding_result, 
+                                                                decoding_result + '.sorted')
         f.write(cmd+'\n')
         cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result) 
         f.write(cmd+'\n')
-        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result + '.sort') 
+        cmd = 'chown -R {}:{} {}'.format(os.getuid(), os.getgid(), decoding_result + '.sorted') 
         f.write(cmd+'\n')
 
 
@@ -122,13 +118,20 @@ def make_argparse():
     parser = argparse.ArgumentParser(description='Generate ASR input files')
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', required=True)
-    parser.add_argument('--tool_path', required=True)
-    parser.add_argument('--asr_path', required=True)
+    parser.add_argument('--input_path', metavar='<path>', required=True, 
+                        help='Directory where input audio files are retrieved.')
+    parser.add_argument('--decode_path', metavar='<path>', required=True, 
+                        help='Directory in which decoding is to be performed')
+    parser.add_argument('--tool_path', metavar='<path>', required=True)
+    parser.add_argument('--am_path', metavar='<path>', required=True)
 
-    parser.add_argument('--cut_margin', default=0.25, type=float)
-    parser.add_argument('--merge_margin', default=1, type=float)
-    parser.add_argument('--outfile', default=r'', type=str, required=False)
+    parser.add_argument('--cut_margin', default=0.25, metavar='<float>', type=float, 
+                        help='Segmentation parameter.')
+    parser.add_argument('--merge_margin', default=1, metavar='<float>', type=float, 
+                        help='Segmentation parameter.')
+
+    parser.add_argument('--multi_stream', action='store_true', 
+                        help='Set this flag when processing CSS (or multi-stream) outputs.')
 
     return parser
 
@@ -138,5 +141,3 @@ if __name__ == '__main__':
     parser = make_argparse()
     args = parser.parse_args()
     main(args)
-
-

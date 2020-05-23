@@ -6,7 +6,7 @@ import wave
 import soundfile as sf
 import webrtcvad
 import os
-
+# this part is mostly taken from the webrtcvad repo
 
 
 def read_wave(path):

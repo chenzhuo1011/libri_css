@@ -4,15 +4,19 @@ import argparse, sys, os, glob, re
 from collections import defaultdict
 
 
-def sortout_results(ctmfile, tgtdir):
+def sortout_results(ctmfile, tgtdir, with_channel=False):
     print('')
     print('{}'.format(ctmfile))
     print('    -> {}'.format(tgtdir))
 
     os.makedirs(tgtdir, exist_ok=True)
 
-    # overlap_ratio_0.0_sil2.9_3.0_session0_actual0.0_segment_5_195199_384160 1 1.770 0.420 REMEMBER
-    ptrn = re.compile('^overlap_ratio_([\d\.]+)_sil([\d\.]+)_([\d\.]+)_session(\d+)_actual([\d\.]+)_segment_(\d+)_(\d+)_(\d+)$')
+    if with_channel: 
+        # overlap_ratio_0.0_sil0.1_0.5_session0_actual0.0_segment_6_1_399200_556960 1 7.330 0.550 SPEAKING
+        ptrn = re.compile('^overlap_ratio_([\d\.]+)_sil([\d\.]+)_([\d\.]+)_session(\d+)_actual([\d\.]+)_[A-Za-z]+_(\d+)_\d+_(\d+)_(\d+)$')
+    else:
+        # overlap_ratio_0.0_sil2.9_3.0_session0_actual0.0_segment_5_195199_384160 1 1.770 0.420 REMEMBER
+        ptrn = re.compile('^overlap_ratio_([\d\.]+)_sil([\d\.]+)_([\d\.]+)_session(\d+)_actual([\d\.]+)_[A-Za-z]+_(\d+)_(\d+)_(\d+)$')
 
     results = defaultdict(list)
 
@@ -72,24 +76,7 @@ def main(args):
             cfg = os.path.splitext(os.path.basename(ctmfile))[0]
             tgtdir = os.path.join(args.outputdir, cfg, cond)
 
-            sortout_results(ctmfile, tgtdir)
-
-
-
-
-    # # Write the sorted version to the output CTM file. 
-    # for segment in hyps:
-    #     outputdir = os.path.join(args.outputdir, os.path.splitext(os.path.basename(args.inputfile))[0])
-    #     outputfile = os.path.join(outputdir, segment + '.ctm')
-
-    #     os.makedirs(outputdir, exist_ok=True)
-
-    #     curhyps = sorted(hyps[segment], key=lambda hyp: hyp[2])
-
-    #     with open(outputfile, 'w') as f:
-    #         for mtg, ch, start, dur, wrd, conf in curhyps:
-    #             print('{} {} {:.2f} {} {} {}'.format(mtg, ch, start, dur, wrd, conf), file=f)
-
+            sortout_results(ctmfile, tgtdir, with_channel=args.with_channel)
 
 
 
@@ -101,6 +88,8 @@ def make_argparse():
                         help='Raw ASR result directory.')
     parser.add_argument('--outputdir', metavar='<path>', required=True, 
                         help='Output directory.')
+    parser.add_argument('--with_channel', action='store_true', 
+                        help='Has a channel index in each CTM line.')
 
     return parser
 

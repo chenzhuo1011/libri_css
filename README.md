@@ -1,9 +1,10 @@
 # LibriCSS
-Continuous speech separation (CSS) is an approach to handling overlapped speech in conversational audio signals. Most previous speech separation algorithms were tested on artificially mixed pre-segmented speech signals and thus bypassed overlap detection and speaker counting by implicitly assuming overlapped regions to be already extracted from the input audio. CSS is an attempt to directly process the continuously incoming audio signals with online processing. The main concept was established and its effectiveness was evaluated on real meeting recordings in [1]. As these recordings were proprietary, a publicly available dataset, called LibriCSS, has been prepared by the same research group in [2]. This repository contains the programs for LibriCSS evaluation. 
+Continuous speech separation (CSS) is an approach to handling overlapped speech in conversational audio signals. Most previous speech separation algorithms were tested on artificially mixed pre-segmented speech signals and thus bypassed overlap detection and speaker counting by implicitly assuming overlapped regions to be already extracted from the input audio. CSS is an attempt to directly process the continuously incoming audio signals with online processing. The main concept was established and its effectiveness was evaluated on real meeting recordings in [1]. As these recordings were proprietary, a publicly available dataset, called LibriCSS, has been prepared by the same research group in [2]. This repository contains the programs for LibriCSS evaluation. The LibriCSS dataset can be used for evaluation offline algorithms. 
 
 [1] T. Yoshioka et al., "Advances in Online Audio-Visual Meeting Transcription," 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), SG, Singapore, 2019, pp. 276-283. 
 
 [2] Z. Chen et al., "Continuous speech separation: dataset and analysis," ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Barcelona, Spain, 2020, accepted for publication.
+
 
 ## Requirements
 
@@ -29,34 +30,28 @@ The second command activates the newly created environment named libricss_releas
 To perform continuous input evaluation, you may follow the steps below. 
 1. First, the data can be downloaded and preprocessed as follows. 
     ```
-    cd dataprep
-    ./scripts/dataprep.sh
-    cd ..
+    ./dataprep/scripts/dataprep.sh
     ```
 2. Then, ASR can be run by taking the following steps. 
     ```
-    cd asr/script
-    ./gen_asrinput_raw_continuous.sh  # performing VAD
-    cd ../..
+    ./asr/scripts/gen_asrinput_raw_continuous.sh  # performing VAD
     sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
-    cd asr/exp
-    . decode_raw_continuous.sh  # running ASR
-    cd ../..
+    cd exp/data/baseline/segments/decoding_cmd
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
     ```
-    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sort. If you want to use your own ASR system, you may skip this step. 
+    This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sorted. If you want to use your own ASR system, you may skip this step. 
     
-    Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment by Ctrl-d, as by default files generated within the Docker environment are owned by root. 
+    Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment, as by default files generated within the Docker environment are owned by root. 
     ```
     chmod -R 777 $EXPROOT
     ```
     
 3. Finally, the ASR results can be scored as follows. 
     ```
-    cd scoring
-    ./scripts/eval_continuous.sh ../exp/data/baseline/segments/decoding_result.sort/13_0.0
-    python ./python/report.py --inputdir ../exp/data/baseline/segments/decoding_result.sort/13_0.0
+    ./scoring/scripts/eval_continuous.sh exp/data/baseline/segments/decoding_result.sorted/13_0.0
+    python ./scoring/python/report.py --inputdir exp/data/baseline/segments/decoding_result.sorted/13_0.0
     ```  
     The Python script scoring/python/report.py will print out the results as follows. 
     ```  
@@ -75,48 +70,110 @@ To perform continuous input evaluation, you may follow the steps below.
 
 ### Utterance-wise evaluation
 
-We assume that you have already downloaded the AM and PyKaldi2 as described above. 
+Assuming that you have already downloaded the AM and PyKaldi2 as described above, ASR can be performed as follows. 
+```
+./asr/scripts/gen_asrinput_raw_utterance.sh  # performing VAD
+sh activate.sh  # activating PyKaldi2 Docker environment
+source path.sh
+source asr/scripts/asr_path.sh
 
-1. Activate the PyKaldi2 Docker environment by running:
+cd exp/data/separation_baseline/utterance/decoding_cmd  
+. decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+exit  # quitting the Docker environment
+```
+
+After this step, the WERs of the utterance-wise evaluation are displayed as:
+```
+0S         : 11.5
+0L         : 11.3
+OV10       : 18.3
+OV20       : 26.4
+OV30       : 34.6
+OV40       : 43.2
+```
+
+You might want to change the permission of the intermediate files before you exit the Docker environment, as by default the files generated within the Docker environment are owned by root. 
+```
+chmod -R 777 $EXPROOT
+```
+  
+
+## Example CSS/SS Results
+
+The steps described above generate the baseline results without speech separation nor overlapped speech recognition. 
+We are also publishing example output waveforms of the CSS algorithm as well as the scripts that perform ASR and WER scoring for these signals. 
+Those focusing on the front-end speech separation algorithms will be able to test their own algorithms by replacing the example waveforms by their own ones. 
+
+
+### Continuous input evaluation
+To perform continuous input evaluation, you may follow the steps below. 
+1. First, the example waveforms can be downloaded as follows. 
     ```
-    sh activate.sh
+    ./dataprep/scripts/dataprep_separation.sh
+    ```
+    Under each exp/data/separation_result/continuous_separation/overlap_ratio_*, you will find seg\_\*\__{0,1}.wav. For example, seg\_0\_{0,1}.wav are the two-channel signals generated by the CSS algorithm applied to the original 7-channel segment\_0.wav. 
+2. Then, ASR can be run by taking the following steps. 
+    ```
+    ./asr/scripts/gen_asrinput_separated_continuous.sh  # performing VAD
+    sh activate.sh  # activating PyKaldi2 Docker environment
     source path.sh
     source asr/scripts/asr_path.sh
-    ```
-
-2. Then, the decoding command can be generated, and perform decoding as follows. 
-    ```
-    cd asr/script
-    ./gen_asrinput_raw_utterance.sh
-    cd ../exp
-    . decode_raw_utterance.sh
+    cd exp/data/separation_baseline/decoding_cmd
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+    exit  # quitting the Docker environment
+    ```    
     
+3. Finally, the ASR results can be scored as follows. 
     ```
-  
-    Also you might want to change the permission of the intermediate files before you exit the Docker environment by Ctrl-d, as by default the files generated within the Docker environment are owned by root. 
-    ```
-    chmod -R 777 $EXPROOT
-    ```
-  
-3. Finally, collect the WERs with following command: 
-    ```
-    cd ../scripts
-    . run_wer_raw_utterance.sh
-    ```
-    The result will be shown and can be found exp/data/baseline/utterance/decoding_result.    
-    ```
-    0S       : 0.11458333333333333
-    0L       : 0.11254386680812863
-    OV10       : 0.1828377230246389
-    OV20       : 0.2641803896243677
-    OV30       : 0.34600058314705023
-    OV40       : 0.43238971784502395
-    ```
+    ./scoring/scripts/eval_continuous.sh exp/data/separation_baseline/decoding_result.sorted/13_0.0/
+    python scoring/python/report.py --inputdir exp/data/separation_baseline/decoding_result.sorted/13_0.0/
+    ```  
+    The Python script scoring/python/report.py will print out the results as follows. 
+    ```  
+    Result Summary
+    --------------
+    Condition: %WER
+    0S       : 11.9
+    0L       : 9.7
+    10       : 13.4
+    20       : 15.1
+    30       : 19.7
+    40       : 22.0    
+    ```  
+    This corresponds to the "7ch" results of Table 3 in [2]. 
 
-## Plan
 
-The current repository generates only the baseline results without separation processing. For those of you focusing on front-end speech separation algorithms, we are planning to add example CSS output waveforms and ASR scripts using them. 
+### Utterance-wise evaluation
 
+1. The utterance-wise separaiton data are downloaded along with the continuous evaluation data, i.e., you can skip this step if you have done Step 1 of the section above.
+    ```
+    ./dataprep/scripts/dataprep_separation.sh
+    ```
+    Under each exp/data/separation_result/utterance_separation/overlap_ratio_*, you will find utterance\_\*\__{0,1}.wav. For example, utterance\_0\_{0,1}.wav are the two-channel signals obtained by applying the utterance-wise separation algorithm to the original 7-channel utterance\_0.wav. 
+
+2. Then, the ASR and WER calculation can be performed with the following steps. 
+    ```
+    ./asr/scripts/gen_asrinput_separated_utterance.sh  # performing VAD
+    sh activate.sh  # activating PyKaldi2 Docker environment
+    source path.sh
+    source asr/scripts/asr_path.sh
+    
+    cd exp/data/separation_baseline/utterance/decoding_cmd
+    . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+    exit  # quitting the Docker environment
+    ```    
+    
+    After this step, the WERs of the utterance-wise evaluation are displayed as:
+
+    ```
+    0S       : 8.3
+    0L       : 8.4
+    OV10     : 11.6
+    OV20     : 16.0
+    OV30     : 18.4
+    OV40     : 21.6
+    ```
+    This corresponds to the "7ch" results of Table 1 in [2]. 
 
 
 ## Some Details
