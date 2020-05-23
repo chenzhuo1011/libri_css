@@ -43,7 +43,7 @@ To perform continuous input evaluation, you may follow the steps below.
     ```
     This will generate CTM files for each mini session, under exp/data/baseline/segments/decoding_result.sorted. If you want to use your own ASR system, you may skip this step. 
     
-    Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment by Ctrl-d, as by default files generated within the Docker environment are owned by root. 
+    Also you might want to change the permission of intermediate files before you exit the PyKaldi2 Docker environment, as by default files generated within the Docker environment are owned by root. 
     ```
     chmod -R 777 $EXPROOT
     ```
@@ -79,6 +79,7 @@ source asr/scripts/asr_path.sh
 
 cd exp/data/separation_baseline/utterance/decoding_cmd  
 . decode.sh  # running ASR (If you want to specify the GPU to use, add "export CUDA_VISIBLE_DEVICES=N" at the top of decode.sh, where N is an integer corresponding to the GPU index.)
+exit  # quitting the Docker environment
 ```
 
 After this step, the WERs of the utterance-wise evaluation are displayed as:
@@ -91,7 +92,7 @@ OV30       : 34.6
 OV40       : 43.2
 ```
 
-You might want to change the permission of the intermediate files before you exit the Docker environment by Ctrl-d, as by default the files generated within the Docker environment are owned by root. 
+You might want to change the permission of the intermediate files before you exit the Docker environment, as by default the files generated within the Docker environment are owned by root. 
     ```
     chmod -R 777 $EXPROOT
     ```
