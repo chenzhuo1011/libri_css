@@ -93,9 +93,9 @@ OV40       : 43.2
 ```
 
 You might want to change the permission of the intermediate files before you exit the Docker environment, as by default the files generated within the Docker environment are owned by root. 
-    ```
-    chmod -R 777 $EXPROOT
-    ```
+```
+chmod -R 777 $EXPROOT
+```
   
 
 ## Example CSS/SS Results
