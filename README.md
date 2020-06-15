@@ -201,7 +201,7 @@ The data stucture is the same as the continuous evaluation, organized by mini se
 The utterance-wise evaluation transcribes each utterance individually. As with many existing speech separation/enhancement tasks, when multiple separation results are generated for one input utterance mixture, the transcription result with the lowest WER is picked as the final result.
 
 
-## Speaker enrollment utterances
+## Speaker Enrollment Utterances
 
 For some speech separation and recognition tasks, speaker enrollment is required. We prepare a speaker enrollment list for every mini session and saved it in speaker_enrollment/libricss_speaker_info.jsonl. In libricss_speaker_info.jsonl, each item corresponds to one mini session, containing three keys: "dataid", "used_uttid", and "unused_uttid", where "dataid" is the session name while "used_uttid" and "unused_uttid" contain the used and unused utterance IDs, respectively, for each speaker in this 10-minute mini session recording. One example to load the jsonl file is shown as follows.
 
