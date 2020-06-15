@@ -203,10 +203,10 @@ The utterance-wise evaluation transcribes each utterance individually. As with m
 
 ## Speaker enrollment utterances
 
-For some speech separation & recognition task, speaker enrollment is required. We prepare a speaker enrollment list for every mini session, saved in speaker_enrollment/libricss_speaker_info.jsonl. In libricss_speaker_info.jsonl, each item corresbonds to one mini session, containing three keys: "dataid", "used_uttid" and "unused_uttid", where "dataid" is the session name, "used_uttid" and "unused_uttid" contains the used and unused utterance id for each speaker in this 10 minutes mini session recording. One example to load the jsonl file is shown as follows
+For some speech separation and recognition tasks, speaker enrollment is required. We prepare a speaker enrollment list for every mini session and saved it in speaker_enrollment/libricss_speaker_info.jsonl. In libricss_speaker_info.jsonl, each item corresponds to one mini session, containing three keys: "dataid", "used_uttid", and "unused_uttid", where "dataid" is the session name while "used_uttid" and "unused_uttid" contain the used and unused utterance IDs, respectively, for each speaker in this 10-minute mini session recording. One example to load the jsonl file is shown as follows. We encourage the user to apply the enrollment following the utterance order in "unused_uttid" to ensure the fair comparison of the algorithms.
 
 ```
 import jsonlines,os
-spk_enroll=lsit(jsonlines.open(os.path.join('speaker_enrollment','libricss_speaker_info.jsonl'))
+spk_enroll=list(jsonlines.open(os.path.join('speaker_enrollment','libricss_speaker_info.jsonl'))
 
 ```
